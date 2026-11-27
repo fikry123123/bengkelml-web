@@ -1174,6 +1174,34 @@
       display: none;
     }
 
+    .shield-heading {
+      flex: 1;
+      margin: 0;
+    }
+
+    .shield-heading-toggle {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 0;
+      background: transparent;
+      border: 0;
+      color: #f8fafc;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .shield-heading-toggle .step-title {
+      flex: 1;
+    }
+
+    .shield-heading-chevron {
+      flex: 0 0 auto;
+      transform: rotate(180deg);
+      transition: transform 0.2s ease;
+    }
+
     .shield-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1194,6 +1222,12 @@
       display: flex;
       flex-direction: column;
       gap: 18px;
+    }
+
+    .service-options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
     }
 
     .pricelist-table {
@@ -1225,10 +1259,182 @@
       gap: 9px;
     }
 
+    .steps-grid.process-steps {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .editorial-section {
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+      box-shadow: none;
+      gap: 24px;
+      scroll-margin-top: 112px;
+    }
+
+    .editorial-heading {
+      border-left: 3px solid #fbbf24;
+      padding: 2px 0 2px 18px;
+    }
+
+    .editorial-kicker {
+      margin: 0 0 8px;
+      color: #fbbf24;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .editorial-title {
+      margin: 0;
+      color: #f8fafc;
+      font-size: clamp(26px, 4vw, 46px);
+      font-weight: 900;
+      line-height: 1.08;
+      letter-spacing: 0.3px;
+    }
+
+    .editorial-title span {
+      color: #22d3ee;
+    }
+
+    .editorial-subtitle {
+      margin: 10px 0 0;
+      color: #a7b3c2;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .process-card {
+      min-height: 190px;
+      padding: 24px 20px;
+      background: #17142e;
+      border: 1.5px solid #2e2859;
+      border-top: 3px solid #22d3ee;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .process-card:nth-child(even) {
+      border-top-color: #fbbf24;
+    }
+
+    .process-number {
+      color: #22d3ee;
+      font-size: 30px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .process-card:nth-child(even) .process-number {
+      color: #fbbf24;
+    }
+
+    .process-card h3 {
+      margin: 0;
+      color: #f8fafc;
+      font-size: 16px;
+      font-weight: 900;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .process-card p {
+      margin: 0;
+      color: #a7b3c2;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .services-section .service-options-grid {
+      gap: 16px;
+    }
+
+    .service-option-card {
+      border: 1.5px solid #2e2859;
+      border-radius: 12px;
+      padding: 22px;
+    }
+
+    .service-option-regular {
+      border-top: 3px solid #22d3ee;
+    }
+
+    .service-option-carry {
+      border-top: 3px solid #fbbf24;
+    }
+
     .feature-2col-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 9px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .why-card {
+      min-height: 190px;
+      padding: 26px 22px;
+      background: #17142e;
+      border: 1.5px solid #2e2859;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 14px;
+    }
+
+    .why-icon {
+      width: 58px;
+      height: 58px;
+      flex: 0 0 58px;
+      display: grid;
+      place-items: center;
+      color: #fbbf24;
+      background: #211d42;
+      border: 1px solid #352e66;
+      border-radius: 8px;
+    }
+
+    .why-icon svg {
+      width: 30px;
+      height: 30px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.9;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .why-card:nth-child(even) .why-icon {
+      color: #22d3ee;
+      background: #171f3b;
+      border-color: #24465b;
+    }
+
+    .why-card h3 {
+      margin: 0;
+      color: #f1f5f9;
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .why-card p {
+      margin: -2px 0 0;
+      color: #a7b3c2;
+      font-size: 13px;
+      line-height: 1.55;
     }
 
     .testi-grid-wrap {
@@ -1481,6 +1687,16 @@
     /* =========================================================================
        11. DESKTOP ADAPTIVE BREAKPOINT (>= 960px)
        ========================================================================= */
+    @media (min-width: 601px) and (max-width: 959px) {
+      .why-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .steps-grid.process-steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
     @media (min-width: 960px) {
       .app-shell {
         border-left: 2px solid #231f45;
@@ -1533,12 +1749,41 @@
         align-items: start;
       }
 
+      .info-two-col.pricing-services-stack {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .info-two-col.payment-faq-stack {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .service-options-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .service-options-grid .addon-card {
+        height: 100%;
+      }
+
+      .service-options-grid .addon-card > button {
+        margin-top: auto;
+      }
+
       .steps-grid {
         grid-template-columns: repeat(4, 1fr);
       }
 
+      .steps-grid.process-steps {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
       .feature-2col-grid {
         grid-template-columns: repeat(3, 1fr);
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
       .testi-grid-wrap {
@@ -1559,6 +1804,21 @@
     }
 
     @media (max-width: 600px) {
+      .why-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .process-card {
+        min-height: 0;
+        padding: 22px 18px;
+      }
+
+      .why-card {
+        min-height: 0;
+        padding: 22px 18px;
+      }
+
       .header-inner {
         height: auto;
         min-height: 62px;
@@ -2111,21 +2371,20 @@
           <!-- BENGKELML SHIELD (COLLAPSIBLE SHOW / HIDE) -->
           <div class="section-card" id="sec-shield">
             <div class="step-header">
-              <div class="step-title-wrap">
-                <span class="step-num" style="background-color:#0d2b22;border-color:#10b981;color:#34d399;">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </span>
-                <h2 class="step-title">BENGKELML Shield</h2>
-              </div>
-              <button type="button" class="shield-toggle-btn" onclick="toggleShieldSection()">
-                <span id="txtShieldToggleLabel">Sembunyikan</span>
-                <svg id="iconShieldChevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.6">
-                  <polyline points="18 15 12 9 6 15"/>
-                </svg>
-              </button>
+              <h2 class="shield-heading">
+                <button type="button" class="shield-heading-toggle" id="btnShieldToggle" aria-controls="shieldBodyContent" aria-expanded="false" onclick="toggleShieldSection()">
+                  <span class="step-num" style="background-color:#0d2b22;border-color:#10b981;color:#34d399;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  </span>
+                  <span class="step-title">BENGKELML Shield</span>
+                  <svg id="iconShieldChevron" class="shield-heading-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.6" aria-hidden="true">
+                    <polyline points="18 15 12 9 6 15"/>
+                  </svg>
+                </button>
+              </h2>
             </div>
 
-            <div class="shield-body" id="shieldBodyContent">
+            <div class="shield-body collapsed" id="shieldBodyContent" aria-hidden="true">
               <p style="font-size:12px;color:#cbd5e1;">Perlindungan keamanan akun dan kenyamanan kamu sebelum, selama, dan sesudah sesi boosting.</p>
               <div class="shield-grid">
                 <div class="shield-item">
@@ -2158,7 +2417,7 @@
       <!-- =====================================================================
            PRICELIST TABLE (3 COLUMNS ONLY - NO HITUNG BUTTON) & SERVICES
            ===================================================================== -->
-      <div class="info-two-col">
+      <div class="info-two-col pricing-services-stack">
         <div class="section-card" id="sec-pricelist">
           <div class="step-header">
             <h2 class="step-title">Daftar Harga Resmi S42</h2>
@@ -2185,113 +2444,136 @@
           </div>
         </div>
 
-        <div class="section-card" id="sec-services">
-          <div class="step-header">
-            <h2 class="step-title">Layanan Kami</h2>
-            <span class="s42-badge" style="font-size:10px;">2 Metode</span>
-          </div>
+        <section class="section-card editorial-section services-section" id="sec-services" aria-labelledby="services-title">
+          <header class="editorial-heading">
+            <p class="editorial-kicker">// PILIH LAYANAN</p>
+            <h2 class="editorial-title" id="services-title">LAYANAN JOKI <span>MLBB</span></h2>
+            <p class="editorial-subtitle">Pilih metode joki yang paling sesuai dengan kebutuhanmu.</p>
+          </header>
 
-          <div class="addon-card" style="border-color:#22d3ee;">
-            <div style="display:flex;justify-content:space-between;align-items:center;">
-              <strong style="font-size:14px;color:#ffffff;">1. Joki Rank Reguler</strong>
-              <span class="status-pill-cyan">Paling Laris</span>
+          <div class="service-options-grid">
+            <div class="addon-card service-option-card service-option-regular">
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <strong style="font-size:14px;color:#ffffff;">1. Joki Rank Reguler</strong>
+                <span class="status-pill-cyan">Paling Laris</span>
+              </div>
+              <p style="font-size:12px;color:#cbd5e1;">Akun dimainkan langsung oleh booster profesional pilihan kami sampai rank target tercapai.</p>
+              <div style="font-size:12px;color:#f8fafc;display:flex;flex-direction:column;gap:4px;">
+                <div>✓ Gratis request hingga 3 hero meta favorit (A–Z)</div>
+                <div>✓ Opsi Live Stream Match &amp; Fast Track Prioritas</div>
+                <div>✓ Proteksi IP Indonesia &amp; bebas ban</div>
+              </div>
+              <button type="button" class="secondary-action-btn" style="border-color:#22d3ee;color:#22d3ee;" onclick="setServiceMode('reguler');scrollToSection('sec-calculator');">
+                Pilih Joki Reguler ↑
+              </button>
             </div>
-            <p style="font-size:12px;color:#cbd5e1;">Akun dimainkan langsung oleh booster profesional pilihan kami sampai rank target tercapai.</p>
-            <div style="font-size:12px;color:#f8fafc;display:flex;flex-direction:column;gap:4px;">
-              <div>✓ Gratis request hingga 3 hero meta favorit (A–Z)</div>
-              <div>✓ Opsi Live Stream Match &amp; Fast Track Prioritas</div>
-              <div>✓ Proteksi IP Indonesia &amp; bebas ban</div>
-            </div>
-            <button type="button" class="secondary-action-btn" style="border-color:#22d3ee;color:#22d3ee;" onclick="setServiceMode('reguler');scrollToSection('sec-calculator');">
-              Pilih Joki Reguler ↑
-            </button>
-          </div>
 
-          <div class="addon-card" style="border-color:#fbbf24;">
-            <div style="display:flex;justify-content:space-between;align-items:center;">
-              <strong style="font-size:14px;color:#fbbf24;">2. Joki Gendong (Carry Mabar)</strong>
-              <span class="status-pill-green">Tanpa Login</span>
+            <div class="addon-card service-option-card service-option-carry">
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <strong style="font-size:14px;color:#fbbf24;">2. Joki Gendong (Carry Mabar)</strong>
+                <span class="status-pill-green">Tanpa Login</span>
+              </div>
+              <p style="font-size:12px;color:#cbd5e1;">Main bareng booster di lobby party yang sama. Kamu tetap bermain sendiri tanpa serahkan akun.</p>
+              <div style="font-size:12px;color:#f8fafc;display:flex;flex-direction:column;gap:4px;">
+                <div>✓ 100% Tanpa Password / Data Login Akun</div>
+                <div>✓ Pilihan paket Per-Rank atau Per-Win (1 / 3 / 5 Win)</div>
+                <div>✓ Garansi kalah langsung diganti 1 win gratis</div>
+              </div>
+              <button type="button" class="primary-action-btn" onclick="setServiceMode('gendong');scrollToSection('sec-calculator');">
+                Pilih Joki Gendong ↑
+              </button>
             </div>
-            <p style="font-size:12px;color:#cbd5e1;">Main bareng booster di lobby party yang sama. Kamu tetap bermain sendiri tanpa serahkan akun.</p>
-            <div style="font-size:12px;color:#f8fafc;display:flex;flex-direction:column;gap:4px;">
-              <div>✓ 100% Tanpa Password / Data Login Akun</div>
-              <div>✓ Pilihan paket Per-Rank atau Per-Win (1 / 3 / 5 Win)</div>
-              <div>✓ Garansi kalah langsung diganti 1 win gratis</div>
-            </div>
-            <button type="button" class="primary-action-btn" onclick="setServiceMode('gendong');scrollToSection('sec-calculator');">
-              Pilih Joki Gendong ↑
-            </button>
           </div>
-        </div>
+        </section>
       </div>
 
       <!-- =====================================================================
            CARA ORDER (4 LANGKAH)
            ===================================================================== -->
-      <div class="section-card" id="sec-howto">
-        <div class="step-header">
-          <h2 class="step-title">Cara Order (4 Langkah Mudah)</h2>
-          <span class="status-pill-green">Proses ± 5 Menit</span>
+      <section class="section-card editorial-section process-section" id="sec-howto" aria-labelledby="howto-title">
+        <header class="editorial-heading">
+          <p class="editorial-kicker">// CARA ORDER</p>
+          <h2 class="editorial-title" id="howto-title">CARA ORDER <span>JOKI MLBB</span></h2>
+          <p class="editorial-subtitle">Empat langkah mudah dari hitung harga sampai rank naik.</p>
+        </header>
+        <div class="steps-grid process-steps">
+          <article class="process-card">
+            <div class="process-number">01</div>
+            <h3>Hitung Harga</h3>
+            <p>Pilih rank awal dan rank tujuan di kalkulator. Total harga langsung tampil dengan transparan.</p>
+          </article>
+          <article class="process-card">
+            <div class="process-number">02</div>
+            <h3>Chat WhatsApp</h3>
+            <p>Kirim order dan konfirmasi detail pesanan bersama admin melalui WhatsApp.</p>
+          </article>
+          <article class="process-card">
+            <div class="process-number">03</div>
+            <h3>Proses Pengerjaan</h3>
+            <p>Booster mulai mengerjakan pesanan sesuai metode joki yang kamu pilih.</p>
+          </article>
+          <article class="process-card">
+            <div class="process-number">04</div>
+            <h3>Selesai &amp; Aman</h3>
+            <p>Periksa rank setelah selesai. Untuk Joki Reguler, ganti kata sandi setelah sesi berakhir.</p>
+          </article>
         </div>
-        <div class="steps-grid">
-          <div class="shield-item">
-            <div style="font-size:11px;font-weight:900;color:#fbbf24;margin-bottom:3px;">01 • HITUNG HARGA</div>
-            <div style="font-size:13px;font-weight:900;color:#ffffff;margin-bottom:3px;">Pilih Rank &amp; Add-On</div>
-            <div style="font-size:11.5px;color:#94a3b8;">Atur rank awal, rank tujuan, dan request hero di kalkulator.</div>
-          </div>
-          <div class="shield-item">
-            <div style="font-size:11px;font-weight:900;color:#22d3ee;margin-bottom:3px;">02 • CHAT WHATSAPP</div>
-            <div style="font-size:13px;font-weight:900;color:#ffffff;margin-bottom:3px;">Kirim Format Otomatis</div>
-            <div style="font-size:11.5px;color:#94a3b8;">Klik Order via WhatsApp dan selesaikan pembayaran via QRIS/Bank.</div>
-          </div>
-          <div class="shield-item">
-            <div style="font-size:11px;font-weight:900;color:#34d399;margin-bottom:3px;">03 • PROSES JOKI</div>
-            <div style="font-size:13px;font-weight:900;color:#ffffff;margin-bottom:3px;">Booster Mulai Push</div>
-            <div style="font-size:11.5px;color:#94a3b8;">Pro player langsung mengerjakan pesanan dengan winstreak tinggi.</div>
-          </div>
-          <div class="shield-item">
-            <div style="font-size:11px;font-weight:900;color:#c084fc;margin-bottom:3px;">04 • SELESAI &amp; AMAN</div>
-            <div style="font-size:13px;font-weight:900;color:#ffffff;margin-bottom:3px;">Cek Rank &amp; Ganti Sandi</div>
-            <div style="font-size:11.5px;color:#94a3b8;">Admin kirim bukti screenshot rank tercapai, akun siap dimainkan.</div>
-          </div>
-        </div>
-      </div>
+      </section>
 
       <!-- =====================================================================
            KEUNGGULAN BENGKELML (6 CARDS)
            ===================================================================== -->
-      <div class="section-card">
-        <div class="step-header">
-          <h2 class="step-title">Kenapa Pilih BENGKELML?</h2>
-          <span class="s42-badge" style="font-size:10px;">6 Jaminan</span>
+      <section class="section-card editorial-section" aria-labelledby="why-title">
+        <header class="editorial-heading">
+          <p class="editorial-kicker">// KEUNGGULAN BENGKELML</p>
+          <h2 class="editorial-title" id="why-title">KENAPA PILIH <span>BENGKELML</span>?</h2>
+          <p class="editorial-subtitle">Harga, estimasi, dan aturan main yang jelas sebelum order.</p>
+        </header>
+        <div class="why-grid">
+          <article class="why-card">
+            <div class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+            </div>
+            <h3>Estimasi Jelas per Tier</h3>
+            <p>Estimasi target dan biaya jelas sejak awal sesuai tier dan bintang yang dipilih.</p>
+          </article>
+          <article class="why-card">
+            <div class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"></path><path d="m9 12 2 2 4-4"></path></svg>
+            </div>
+            <h3>Main Manual &amp; Tanpa Cheat</h3>
+            <p>Pengerjaan dilakukan secara manual oleh booster, tanpa cheat atau program ilegal.</p>
+          </article>
+          <article class="why-card">
+            <div class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8A8.5 8.5 0 0 1 8.7 3.9a8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"></path></svg>
+            </div>
+            <h3>Chat Langsung Admin</h3>
+            <p>Admin siap membantu order dan konsultasi selama proses berlangsung.</p>
+          </article>
+          <article class="why-card">
+            <div class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.1 8.3 22 9.3 17 14.2 18.2 21 12 17.8 5.8 21 7 14.2 2 9.3 8.9 8.3 12 2"></polygon></svg>
+            </div>
+            <h3>Booster Mythic Immortal</h3>
+            <p>Booster kami terverifikasi dengan rank minimal 100★+ Mythic Immortal.</p>
+          </article>
+          <article class="why-card">
+            <div class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M2 10h20"></path></svg>
+            </div>
+            <h3>Transparan &amp; Diskon Otomatis</h3>
+            <p>Harga ditampilkan sebelum order, dengan diskon otomatis hingga 20% untuk order tertentu.</p>
+          </article>
+          <article class="why-card">
+            <div class="why-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M22 11.1V12a10 10 0 1 1-5.9-9.1"></path><path d="m9 11 3 3L22 4"></path></svg>
+            </div>
+            <h3>Garansi Ganti Win Gratis</h3>
+            <p>Jika kalah saat paket Joki Gendong, kami ganti 1 win tambahan gratis.</p>
+          </article>
         </div>
-        <div class="feature-2col-grid">
-          <div class="shield-item">
-            <div style="font-size:12.5px;font-weight:900;color:#fbbf24;margin-bottom:3px;">Estimasi Waktu Jelas</div>
-            <div style="font-size:11.5px;color:#94a3b8;">Target pengerjaan transparan sejak awal pemesanan.</div>
-          </div>
-          <div class="shield-item">
-            <div style="font-size:12.5px;font-weight:900;color:#34d399;margin-bottom:3px;">100% Manual No-Cheat</div>
-            <div style="font-size:11.5px;color:#94a3b8;">Murni mekanik &amp; makro ex-pro player tanpa cheat.</div>
-          </div>
-          <div class="shield-item">
-            <div style="font-size:12.5px;font-weight:900;color:#22d3ee;margin-bottom:3px;">Admin Fast Response 24/7</div>
-            <div style="font-size:11.5px;color:#94a3b8;">Siap melayani order &amp; konsultasi kapan saja.</div>
-          </div>
-          <div class="shield-item">
-            <div style="font-size:12.5px;font-weight:900;color:#c084fc;margin-bottom:3px;">Booster Mythic Immortal</div>
-            <div style="font-size:11.5px;color:#94a3b8;">Seluruh booster terverifikasi minimal 100★+ Immortal.</div>
-          </div>
-          <div class="shield-item">
-            <div style="font-size:12.5px;font-weight:900;color:#fbbf24;margin-bottom:3px;">Diskon Volume Otomatis</div>
-            <div style="font-size:11.5px;color:#94a3b8;">Semakin banyak bintang diorder, diskon hingga 20%.</div>
-          </div>
-          <div class="shield-item">
-            <div style="font-size:12.5px;font-weight:900;color:#34d399;margin-bottom:3px;">Garansi Target Tercapai</div>
-            <div style="font-size:11.5px;color:#94a3b8;">Kalah saat paket Gendong langsung diganti 1 win gratis.</div>
-          </div>
-        </div>
-      </div>
+      </section>
 
       <!-- =====================================================================
            TESTIMONI & BUKTI ORDER (WITH MODAL)
@@ -2334,7 +2616,7 @@
       <!-- =====================================================================
            METODE PEMBAYARAN & FAQ ACCORDION
            ===================================================================== -->
-      <div class="info-two-col">
+      <div class="info-two-col payment-faq-stack">
         <div class="section-card">
           <div class="step-header">
             <h2 class="step-title">Metode Pembayaran</h2>
@@ -2786,7 +3068,7 @@
         priority: false,
         liveStream: false
       },
-      shieldVisible: true,
+      shieldVisible: false,
       toolsVisible: false
     };
 
@@ -3130,8 +3412,11 @@
 
     function toggleShieldSection() {
       state.shieldVisible = !state.shieldVisible;
-      document.getElementById('shieldBodyContent').classList.toggle('collapsed', !state.shieldVisible);
-      document.getElementById('txtShieldToggleLabel').textContent = state.shieldVisible ? 'Sembunyikan' : 'Tampilkan';
+      const body = document.getElementById('shieldBodyContent');
+      const toggle = document.getElementById('btnShieldToggle');
+      body.classList.toggle('collapsed', !state.shieldVisible);
+      body.setAttribute('aria-hidden', String(!state.shieldVisible));
+      toggle.setAttribute('aria-expanded', String(state.shieldVisible));
       document.getElementById('iconShieldChevron').style.transform = state.shieldVisible ? 'rotate(0deg)' : 'rotate(180deg)';
     }
 
