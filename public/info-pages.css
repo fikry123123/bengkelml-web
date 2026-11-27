@@ -98,6 +98,8 @@ button:focus-visible, a:focus-visible, select:focus-visible { outline: 2px solid
 .page-table td { color: #dfe5ed; font-size: 12px; }
 .page-table td:last-child, .page-table th:last-child { text-align: right; }
 .page-table tr:last-child td { border-bottom: 0; }
+.rank-cell { display: flex; align-items: center; gap: 10px; font-weight: 850; color: var(--page-text); }
+.rank-emblem { width: 30px; height: 30px; flex-shrink: 0; object-fit: contain; }
 .price-amount { color: var(--page-gold); font-weight: 900; white-space: nowrap; }
 .note-box { margin-top: 14px; padding: 13px 15px; border-left: 3px solid var(--page-cyan); border-radius: 5px; color: var(--page-muted); background: rgba(34,211,238,.06); font-size: 12px; }
 .steps-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin-top: 14px; }
