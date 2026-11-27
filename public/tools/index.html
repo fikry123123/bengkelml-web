@@ -16,7 +16,7 @@
       <p class="page-eyebrow" data-id="Utilitas pemain • 100% gratis" data-en="Player utilities • 100% free"></p>
       <h1 data-id="Tools gratis untuk <span>pejuang rank.</span>" data-en="Free tools for <span>rank climbers.</span>" data-i18n-html="true"></h1>
       <p data-id="Bantu rencanakan progres permainan dengan kalkulator win rate, simulasi reset season, dan kamus istilah MLBB. Semua tersedia tanpa login." data-en="Plan your progress with the win-rate calculator, season-reset simulator, and MLBB glossary. All tools are available without signing in."></p>
-      <div class="page-actions"><a class="page-button" href="/tools/#sec-tools-trigger" data-id="Buka Tools Sekarang" data-en="Open the Tools"></a></div>
+      <div class="page-actions"><a class="page-button" href="#interactive-tools" data-id="Buka Tools Sekarang" data-en="Open the Tools"></a></div>
     </section>
 
     <div class="page-grid">
@@ -24,21 +24,65 @@
         <p class="page-eyebrow" data-id="Perencanaan win rate" data-en="Win-rate planning"></p>
         <h2 data-id="Kalkulator Win Rate" data-en="Win-Rate Calculator"></h2>
         <p data-id="Masukkan total match, win rate sekarang, dan target. Kalkulator memperkirakan jumlah kemenangan tambahan yang dibutuhkan tanpa mengubah data akun." data-en="Enter your match count, current win rate, and target. The calculator estimates the additional wins required without accessing your account."></p>
-        <a class="text-link" href="/tools/#sec-tools-trigger" data-id="Hitung Win Rate →" data-en="Calculate Win Rate →"></a>
+        <a class="text-link" href="#win-rate-tool" data-id="Hitung Win Rate →" data-en="Calculate Win Rate →"></a>
       </article>
       <article class="page-section">
         <p class="page-eyebrow" data-id="Persiapan akhir season" data-en="Season-end planning"></p>
         <h2 data-id="Simulasi Reset Season" data-en="Season Reset Simulator"></h2>
         <p data-id="Pilih rank saat ini untuk melihat perkiraan posisi setelah reset. Hasil simulasi membantu menyusun target, bukan pengganti pengumuman resmi di dalam game." data-en="Select your current rank to see an estimated position after a reset. Use the result for planning; in-game announcements remain the source of truth."></p>
-        <a class="text-link" href="/tools/#sec-tools-trigger" data-id="Simulasikan Reset →" data-en="Simulate a Reset →"></a>
+        <a class="text-link" href="#season-reset-tool" data-id="Simulasikan Reset →" data-en="Simulate a Reset →"></a>
       </article>
       <article class="page-section">
         <p class="page-eyebrow" data-id="Belajar istilah permainan" data-en="Learn game terminology"></p>
         <h2 data-id="Kamus Istilah MLBB" data-en="MLBB Glossary"></h2>
         <p data-id="Cari arti istilah seperti zoning, freeze lane, snowball, dan Lord dance untuk memahami komunikasi serta strategi dalam match." data-en="Look up terms such as zoning, freeze lane, snowball, and Lord dance to better understand match communication and strategy."></p>
-        <a class="text-link" href="/tools/#sec-tools-trigger" data-id="Jelajahi Kamus →" data-en="Explore the Glossary →"></a>
+        <a class="text-link" href="#glossary-tool" data-id="Jelajahi Kamus →" data-en="Explore the Glossary →"></a>
       </article>
     </div>
+
+    <section class="page-section" id="interactive-tools">
+      <p class="page-eyebrow" data-id="Coba langsung" data-en="Try them now"></p>
+      <h2 data-id="Tools gratis MLBB" data-en="Free MLBB tools"></h2>
+      <p data-id="Semua perhitungan berjalan di browser. Data yang kamu masukkan tidak dikirim ke server." data-en="All calculations run in your browser. The information you enter is not sent to a server."></p>
+      <div class="page-grid tool-widget-grid">
+        <article class="page-card tool-widget" id="win-rate-tool">
+          <p class="page-eyebrow" data-id="Perencanaan win rate" data-en="Win-rate planning"></p>
+          <h3 data-id="Kalkulator Win Rate" data-en="Win-Rate Calculator"></h3>
+          <p data-id="Perkirakan jumlah win tanpa kalah yang dibutuhkan untuk mencapai target WR." data-en="Estimate how many wins without a loss are needed to reach your target rate."></p>
+          <div class="tool-fields">
+            <div><label for="toolTotalMatches" data-id="Total match" data-en="Total matches"></label><input class="tool-input" id="toolTotalMatches" type="number" value="250" min="1" step="1" inputmode="numeric"></div>
+            <div><label for="toolCurrentWinRate" data-id="WR saat ini (%)" data-en="Current WR (%)"></label><input class="tool-input" id="toolCurrentWinRate" type="number" value="52.4" min="0" max="99.9" step="0.1" inputmode="decimal"></div>
+            <div><label for="toolTargetWinRate" data-id="Target WR (%)" data-en="Target WR (%)"></label><input class="tool-input" id="toolTargetWinRate" type="number" value="60" min="0.1" max="99.9" step="0.1" inputmode="decimal"></div>
+          </div>
+          <div class="tool-result" id="toolWinRateResult" aria-live="polite"></div>
+        </article>
+
+        <article class="page-card tool-widget" id="season-reset-tool">
+          <p class="page-eyebrow" data-id="Persiapan akhir season" data-en="Season-end planning"></p>
+          <h3 data-id="Simulasi Reset Season" data-en="Season Reset Simulator"></h3>
+          <p data-id="Pilih tier rank saat ini untuk melihat perkiraan posisi setelah reset." data-en="Choose your current rank tier to see an estimated placement after the reset."></p>
+          <label class="tool-label" for="toolSeasonResetRank" data-id="Rank saat ini" data-en="Current rank"></label>
+          <select class="tool-input" id="toolSeasonResetRank">
+            <option value="epic" data-id="Epic V–I" data-en="Epic V–I"></option>
+            <option value="legend" data-id="Legend V–I" data-en="Legend V–I"></option>
+            <option value="mythic" data-id="Mythic (0–24★)" data-en="Mythic (0–24★)"></option>
+            <option value="honor" data-id="Mythic Honor (25–49★)" data-en="Mythic Honor (25–49★)"></option>
+            <option value="glory" data-id="Mythic Glory (50–99★)" data-en="Mythic Glory (50–99★)"></option>
+            <option value="immortal" data-id="Mythic Immortal (100★+)" data-en="Mythic Immortal (100★+)"></option>
+          </select>
+          <div class="tool-result" id="toolSeasonResetResult" aria-live="polite"></div>
+          <p class="tool-disclaimer" data-id="Hasil hanya perkiraan. Periksa informasi resmi dalam game karena aturan reset dapat berubah." data-en="This is an estimate only. Check in-game announcements as reset rules may change."></p>
+        </article>
+
+        <article class="page-card tool-widget tool-glossary-widget" id="glossary-tool">
+          <p class="page-eyebrow" data-id="Belajar istilah permainan" data-en="Learn game terminology"></p>
+          <h3 data-id="Kamus Istilah MLBB" data-en="MLBB Glossary"></h3>
+          <label class="tool-label" for="toolGlossarySearch" data-id="Cari istilah" data-en="Search terms"></label>
+          <input class="tool-input" id="toolGlossarySearch" type="search" placeholder="Snowball, zoning, Lord..." data-id-placeholder="Cari istilah..." data-en-placeholder="Search terms...">
+          <div class="tool-glossary-list" id="toolGlossaryList"></div>
+        </article>
+      </div>
+    </section>
 
     <section class="page-section">
       <h2 data-id="Cara memakai tools" data-en="How to use the tools"></h2>
@@ -74,6 +118,6 @@
     </section>
   </main>
   <div id="siteFooter"></div>
-  <div class="mobile-page-dock"><div class="mobile-page-dock-inner"><div><small data-id="Pakai alat bantu gratis" data-en="Use free player tools"></small><strong data-id="Tanpa login akun" data-en="No account sign-in"></strong></div><a href="/tools/#sec-tools-trigger" data-id="Buka Tools" data-en="Open Tools"></a></div></div>
+  <div class="mobile-page-dock"><div class="mobile-page-dock-inner"><div><small data-id="Pakai alat bantu gratis" data-en="Use free player tools"></small><strong data-id="Tanpa login akun" data-en="No account sign-in"></strong></div><a href="#interactive-tools" data-id="Buka Tools" data-en="Open Tools"></a></div></div>
 </body>
 </html>

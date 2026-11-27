@@ -479,9 +479,13 @@
       if (element.dataset.i18nHtml === 'true') element.innerHTML = value;
       else element.textContent = value;
     });
+    document.querySelectorAll('[data-id-placeholder][data-en-placeholder]').forEach((element) => {
+      element.placeholder = currentLanguage === 'EN' ? element.dataset.enPlaceholder : element.dataset.idPlaceholder;
+    });
     const pageName = document.body.dataset.page;
     const title = pageTitles[pageName];
     if (title) document.title = title[currentLanguage];
+    if (pageName === 'tools') updateToolsWidgets();
   }
 
   function setSiteLanguage(language) {
@@ -577,7 +581,7 @@
           <div class="site-actions">
             <button type="button" class="site-currency site-currency-top" onclick="cycleSiteCurrency()" title="Change currency"><span data-currency-code>IDR</span> ↻</button>
             <label><span class="visually-hidden">Choose language</span><select class="site-language" data-language-picker aria-label="Choose language"><option value="ID">ID</option><option value="EN">ENG</option></select></label>
-            <a class="site-order" href="/tools/#sec-calculator" data-id="Order Sekarang" data-en="Order Now">Order Sekarang</a>
+            <a class="site-order" href="/#sec-calculator" data-id="Order Sekarang" data-en="Order Now">Order Sekarang</a>
           </div>
         </div>
       </header>
@@ -594,6 +598,92 @@
     return `<div class="site-footer-inner"><div><a class="site-brand" href="/"><span class="site-brand-mark">B</span><span class="site-brand-name">BENGKEL<span>ML</span><small>RANK SERVICE</small></span></a><p data-id="Joki &amp; gendong MLBB dengan harga transparan dan proses yang jelas." data-en="MLBB rank boosting and duo carry with transparent pricing and a clear process."></p></div><nav class="site-footer-nav"><a href="/harga/" data-id="Harga" data-en="Pricing"></a><a href="/joki/" data-id="Joki" data-en="Boosting"></a><a href="/tools/" data-id="Tools" data-en="Tools"></a><a href="/blog/" data-id="Blog" data-en="Blog"></a><a href="/faq/" data-id="FAQ" data-en="FAQ"></a></nav></div>`;
   }
 
+  const toolsGlossary = [
+    { term: 'Snowball', id: 'Keunggulan gold dan level sejak awal yang dipakai untuk terus menekan lawan dan mengamankan objektif.', en: 'An early gold and level lead used to keep pressure on the enemy and secure objectives.' },
+    { term: 'Freeze Lane', id: 'Menahan posisi gelombang minion agar lawan sulit mendapat gold dan EXP dengan aman.', en: 'Keeping a minion wave in a controlled position to deny the opponent safe gold and experience.' },
+    { term: 'Zoning', id: 'Menguasai area atau jalur masuk supaya lawan sulit mendekati objektif penting.', en: 'Controlling an area or approach so opponents struggle to reach an important objective.' },
+    { term: 'Lord Dance', id: 'Mengatur posisi dan memancing reaksi lawan sebelum memutuskan mengambil Lord atau memulai team fight.', en: 'Positioning and drawing out a reaction before deciding to take Lord or start a team fight.' },
+    { term: 'High Ground', id: 'Bertahan di sekitar base dan turret dengan memanfaatkan jangkauan serta kemampuan clear wave.', en: 'Defending near the base and turrets using range and wave-clear abilities.' },
+    { term: 'Split Push', id: 'Menekan lane lain saat lawan berkumpul di tempat berbeda untuk membuka ruang bagi tim.', en: 'Pressuring another lane while the enemy groups elsewhere to create space for your team.' }
+  ];
+
+  const seasonResetResults = {
+    epic: {
+      ID: 'Perkiraan setelah reset: Grandmaster II atau Grandmaster I.',
+      EN: 'Estimated after reset: Grandmaster II or Grandmaster I.'
+    },
+    legend: {
+      ID: 'Perkiraan setelah reset: Epic IV atau Epic III.',
+      EN: 'Estimated after reset: Epic IV or Epic III.'
+    },
+    mythic: {
+      ID: 'Perkiraan setelah reset: Epic II.',
+      EN: 'Estimated after reset: Epic II.'
+    },
+    honor: {
+      ID: 'Perkiraan setelah reset: Epic I.',
+      EN: 'Estimated after reset: Epic I.'
+    },
+    glory: {
+      ID: 'Perkiraan setelah reset: Legend V.',
+      EN: 'Estimated after reset: Legend V.'
+    },
+    immortal: {
+      ID: 'Perkiraan setelah reset: Legend V dengan perlindungan tambahan.',
+      EN: 'Estimated after reset: Legend V with additional protection.'
+    }
+  };
+
+  function updateToolsWidgets() {
+    const totalInput = document.getElementById('toolTotalMatches');
+    const currentInput = document.getElementById('toolCurrentWinRate');
+    const targetInput = document.getElementById('toolTargetWinRate');
+    const winRateResult = document.getElementById('toolWinRateResult');
+    if (!totalInput || !currentInput || !targetInput || !winRateResult) return;
+
+    const total = Number(totalInput.value);
+    const current = Number(currentInput.value);
+    const target = Number(targetInput.value);
+    if (!Number.isFinite(total) || total < 1 || !Number.isFinite(current) || current < 0 || current >= 100 || !Number.isFinite(target) || target <= current || target >= 100) {
+      winRateResult.textContent = currentLanguage === 'EN'
+        ? 'Enter a positive match count and a target rate above your current rate (maximum 99.9%).'
+        : 'Masukkan jumlah match dan target WR di atas WR saat ini (maksimal 99,9%).';
+    } else {
+      const currentWins = total * current / 100;
+      const requiredWins = Math.ceil(((target / 100) * total - currentWins) / (1 - target / 100));
+      winRateResult.innerHTML = currentLanguage === 'EN'
+        ? `You need about <strong>${requiredWins} consecutive wins without a loss</strong> to reach ${target}%`
+        : `Kamu membutuhkan sekitar <strong>${requiredWins} win beruntun tanpa kalah</strong> untuk mencapai ${target}%`;
+    }
+
+    const resetRank = document.getElementById('toolSeasonResetRank');
+    const resetResult = document.getElementById('toolSeasonResetResult');
+    if (resetRank && resetResult) {
+      resetResult.textContent = seasonResetResults[resetRank.value]?.[currentLanguage] || '';
+    }
+
+    const searchInput = document.getElementById('toolGlossarySearch');
+    const glossaryList = document.getElementById('toolGlossaryList');
+    if (searchInput && glossaryList) {
+      const query = searchInput.value.trim().toLowerCase();
+      const entries = toolsGlossary.filter((entry) => {
+        const description = currentLanguage === 'EN' ? entry.en : entry.id;
+        return !query || entry.term.toLowerCase().includes(query) || description.toLowerCase().includes(query);
+      });
+      glossaryList.innerHTML = entries.length
+        ? entries.map((entry) => `<article class="tool-glossary-entry"><h3>${entry.term}</h3><p>${currentLanguage === 'EN' ? entry.en : entry.id}</p></article>`).join('')
+        : `<p class="tool-empty-result">${currentLanguage === 'EN' ? 'No matching terms found.' : 'Istilah tidak ditemukan.'}</p>`;
+    }
+  }
+
+  function initToolsWidgets() {
+    ['toolTotalMatches', 'toolCurrentWinRate', 'toolTargetWinRate', 'toolSeasonResetRank', 'toolGlossarySearch'].forEach((id) => {
+      const input = document.getElementById(id);
+      if (input) input.addEventListener(input.tagName === 'SELECT' ? 'change' : 'input', updateToolsWidgets);
+    });
+    updateToolsWidgets();
+  }
+
   function initInfoPage() {
     if (!document.body.dataset.page) return;
     const header = document.getElementById('siteHeader');
@@ -606,6 +696,7 @@
     document.querySelectorAll('[data-language-picker]').forEach((select) => {
       select.addEventListener('change', () => setSiteLanguage(select.value));
     });
+    if (document.body.dataset.page === 'tools') initToolsWidgets();
   }
 
   window.setSiteLanguage = setSiteLanguage;
