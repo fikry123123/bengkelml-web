@@ -9,7 +9,11 @@ export default defineConfig({
       configureServer(server) {
         server.middlewares.use((req, _res, next) => {
           const route = req.url?.match(/^\/(harga|joki|tools|blog|faq)\/?(\?.*)?$/);
-          if (route) req.url = `/${route[1]}/index.html${route[2] || ''}`;
+          if (route) {
+            req.url = route[1] === 'tools'
+              ? `/index.html${route[2] || ''}`
+              : `/${route[1]}/index.html${route[2] || ''}`;
+          }
           next();
         });
       }

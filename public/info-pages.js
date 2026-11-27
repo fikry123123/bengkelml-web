@@ -577,7 +577,7 @@
           <div class="site-actions">
             <button type="button" class="site-currency site-currency-top" onclick="cycleSiteCurrency()" title="Change currency"><span data-currency-code>IDR</span> ↻</button>
             <label><span class="visually-hidden">Choose language</span><select class="site-language" data-language-picker aria-label="Choose language"><option value="ID">ID</option><option value="EN">ENG</option></select></label>
-            <a class="site-order" href="/#sec-calculator" data-id="Order Sekarang" data-en="Order Now">Order Sekarang</a>
+            <a class="site-order" href="/tools/#sec-calculator" data-id="Order Sekarang" data-en="Order Now">Order Sekarang</a>
           </div>
         </div>
       </header>
