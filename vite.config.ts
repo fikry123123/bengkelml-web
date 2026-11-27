@@ -8,8 +8,9 @@ export default defineConfig({
       name: 'serve-information-page-directory-routes',
       configureServer(server) {
         server.middlewares.use((req, _res, next) => {
-          const route = req.url?.match(/^\/(harga|joki|tools|blog|faq)\/?(\?.*)?$/);
-          if (route) req.url = `/${route[1]}/index.html${route[2] || ''}`;
+          const incoming = req as { url?: string };
+          const route = incoming.url?.match(/^\/(harga|joki|tools|blog|faq)\/?(\?.*)?$/);
+          if (route) incoming.url = `/${route[1]}/index.html${route[2] || ''}`;
           next();
         });
       }
