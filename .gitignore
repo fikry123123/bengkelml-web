@@ -3,6 +3,7 @@ node_modules/
 
 # Production build
 dist/
+/public/site-effects.js
 
 # Local environment variables
 .env

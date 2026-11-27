@@ -235,7 +235,7 @@
     '← Geser Horizontal →': '← Swipe horizontally →',
     'Joki Prioritas / Fast Track': 'Priority Boost / Fast Track',
     'Antrean Normal • Aktifkan untuk 2x lebih cepat': 'Standard queue • Enable for up to 2x faster service',
-    'Live Stream Match': 'Live Stream Match',
+    'Live Stream Match': 'Live Stream Matches',
     'Tonton langsung proses joki secara real-time': 'Watch your boost session live',
     'Rincian Estimasi Paket': 'Package Estimate Details',
     'Diskon Volume Aktif': 'Volume Discount Active',
@@ -401,7 +401,84 @@
     'Win Tanpa Kalah': 'Wins Without a Loss',
     'berturut-turut untuk mencapai WR': 'in a row to reach a win rate of',
     'Cari nama hero (A–Z), misal: Fanny, Hayabusa, Obsidia, Sora...': 'Search heroes (A–Z), e.g. Fanny, Hayabusa, Obsidia, Sora...',
-    'Cari istilah: Snowball, Freeze Lane, Zoning, Lord Dance...': 'Search terms: Snowball, Freeze Lane, Zoning, Lord Dance...'
+    'Cari istilah: Snowball, Freeze Lane, Zoning, Lord Dance...': 'Search terms: Snowball, Freeze Lane, Zoning, Lord Dance...',
+    '// DAFTAR HARGA • SEASON 42': '// PRICE LIST • SEASON 42',
+    'HARGA JOKI': 'BOOSTING PRICES',
+    'Tarif resmi per bintang untuk seluruh tier Mobile Legends Season 42.': 'Official per-star rates for all Mobile Legends Season 42 tiers.',
+    '// PILIH LAYANAN': '// CHOOSE A SERVICE',
+    'LAYANAN JOKI': 'BOOSTING SERVICES',
+    'Pilih metode joki yang paling sesuai dengan kebutuhanmu.': 'Choose the boosting method that best suits your needs.',
+    '// CARA ORDER': '// HOW TO ORDER',
+    'CARA ORDER': 'HOW TO ORDER',
+    'JOKI MLBB': 'MLBB BOOSTING',
+    'Empat langkah mudah dari hitung harga sampai rank naik.': 'Four easy steps from estimating the price to reaching your target rank.',
+    'Chat WhatsApp': 'Message us on WhatsApp',
+    'Proses Pengerjaan': 'Boosting in Progress',
+    'Selesai & Aman': 'Complete & Secure',
+    'Pilih rank awal dan rank tujuan di kalkulator. Total harga langsung tampil dengan transparan.': 'Choose your starting and target ranks in the calculator. Your total is shown transparently.',
+    'Kirim order dan konfirmasi detail pesanan bersama admin melalui WhatsApp.': 'Send your order and confirm the details with our admin on WhatsApp.',
+    'Booster mulai mengerjakan pesanan sesuai metode joki yang kamu pilih.': 'Your booster starts working according to the service you selected.',
+    'Periksa rank setelah selesai. Untuk Joki Reguler, ganti kata sandi setelah sesi berakhir.': 'Check your rank when the service is complete. For Regular Boost, change your password after the session.',
+    '// KEUNGGULAN BENGKELML': '// WHY BENGKELML',
+    'KENAPA PILIH': 'WHY CHOOSE',
+    'Harga, estimasi, dan aturan main yang jelas sebelum order.': 'Clear pricing, estimates, and service terms before you order.',
+    'Estimasi Jelas per Tier': 'Clear Estimates by Tier',
+    'Estimasi target dan biaya jelas sejak awal sesuai tier dan bintang yang dipilih.': 'Your target and estimated price are clear from the start, based on the selected tier and stars.',
+    'Main Manual & Tanpa Cheat': 'Manual Play & No Cheats',
+    'Pengerjaan dilakukan secara manual oleh booster, tanpa cheat atau program ilegal.': 'Boosters play manually without cheats or illegal programs.',
+    'Chat Langsung Admin': 'Chat Directly with an Admin',
+    'Admin siap membantu order dan konsultasi selama proses berlangsung.': 'Our admin can help with orders and questions throughout the process.',
+    'Booster kami terverifikasi dengan rank minimal 100★+ Mythic Immortal.': 'Our boosters are verified at Mythic Immortal rank, with at least 100 stars.',
+    'Transparan & Diskon Otomatis': 'Transparent Prices & Automatic Discounts',
+    'Harga ditampilkan sebelum order, dengan diskon otomatis hingga 20% untuk order tertentu.': 'Prices are shown before ordering, with automatic discounts of up to 20% on eligible orders.',
+    'Garansi Ganti Win Gratis': 'Free Replacement-Win Guarantee',
+    'Jika kalah saat paket Joki Gendong, kami ganti 1 win tambahan gratis.': 'If you lose during a Duo Carry package, we add one replacement win at no cost.',
+    '// TESTIMONI': '// CUSTOMER STORIES',
+    'KATA': 'WHAT',
+    'Pengalaman pemain setelah menggunakan layanan BengkelML.': 'Players share their experience with BengkelML.',
+    '"Request Hayabusa & Obsidia beneran di-carry habis-habisan, WR naik dari 54% jadi 71%. Sehari kelar!"': '"I requested Hayabusa and Obsidia and got carried hard. My win rate went from 54% to 71%. Finished in a day!"',
+    '"Mabar gendong sama trio core-nya enak banget, rotasi rapi dan ramah di voice. Ga perlu kasih akun sama sekali."': '"Playing with the carry trio was great—the rotations were solid and voice chat was friendly. I never had to share my account."',
+    '// METODE PEMBAYARAN': '// PAYMENT METHODS',
+    'PEMBAYARAN': 'PAYMENT',
+    'MUDAH': 'MADE EASY',
+    'Pembayaran dikonfirmasi dengan admin setelah detail order disepakati.': 'Payment is confirmed with our admin once your order details are agreed.',
+    'Singapura': 'Singapore',
+    'Metode Lainnya': 'Other Methods',
+    'JOKI ESPORTS S42': 'ESPORTS BOOSTING S42',
+    '100% Manual Tanpa Cheat': '100% Manual No-Cheat',
+    'Mulai Rp 2.000 / Bintang': 'Starting at Rp 2,000 / Star',
+    'Joki Esports S42': 'S42 Esports Boosting',
+    'Akun dimainkan langsung oleh booster profesional pilihan (privat & cepat).': 'Your account is played by an experienced booster (private & fast).',
+    'Mabar bareng booster di party (100% tanpa login / tanpa kata sandi).': 'Play with a booster in the same party without sharing your account login.',
+    'Kurangi Bintang Awal': 'Decrease Starting Stars',
+    'Tambah Bintang Awal': 'Increase Starting Stars',
+    'Contoh: 123456789 (2345)': 'Example: 123456789 (2345)',
+    'Toggle Live Stream Match': 'Toggle Live Stream',
+    '-5 Bintang': '-5 Stars',
+    '-1 Bintang': '-1 Star',
+    '+1 Bintang': '+1 Star',
+    '+5 Bintang': '+5 Stars',
+    'PILIH RANK AWAL': 'CHOOSE STARTING RANK',
+    'PILIH RANK TUJUAN': 'CHOOSE TARGET RANK',
+    'Add-on & Permintaan Hero': 'Add-ons & Hero Requests',
+    'Permintaan Hero Tertentu (A – Z)': 'Request a Specific Hero (A – Z)',
+    'RANK AWAL': 'STARTING RANK',
+    'TIER RANK': 'RANK TIER',
+    'JOKI REGULER (/★)': 'REGULAR BOOST (/★)',
+    'JOKI GENDONG (/★)': 'DUO CARRY (/★)',
+    'TANPA LOGIN': 'NO LOGIN REQUIRED',
+    'JALUR PRIORITAS': 'FAST LANE',
+    'GENDONG PARTY': 'PARTY CARRY',
+    'Antrean reguler • Aktifkan untuk layanan hingga 2x lebih cepat': 'Standard queue • Enable for up to 2x faster service',
+    'Pantau sesi joki secara langsung': 'Watch your boost session live',
+    'Honor (25★ – 49★ • bisa diisi manual)': 'Honor (25★–49★ • manual entry available)',
+    'Pilihan ex-pro player & top global Immortal. Hitung estimasi harga transparan dengan input bintang langsung dan diskon volume otomatis hingga 20%.': 'Choose an ex-pro player and top global Immortal booster. Get a transparent estimate with direct star input and automatic volume discounts up to 20%.',
+    'Honor (25★ – 49★ • bisa ketik manual)': 'Honor (25★–49★ • manual entry available)',
+    'MEREKA': 'THEY SAY',
+    '// FAQ': '// FAQ',
+    'PERTANYAAN': 'COMMON',
+    'UMUM': 'QUESTIONS',
+    'Jawaban untuk hal yang sering ditanyakan sebelum order.': 'Answers to questions customers often ask before ordering.'
   };
   const pageTitles = {
     harga: { ID: 'Harga Joki MLBB', EN: 'MLBB Boosting Prices' },
@@ -410,6 +487,37 @@
     blog: { ID: 'Blog BengkelML', EN: 'BengkelML Blog' },
     faq: { ID: 'FAQ BengkelML', EN: 'BengkelML FAQ' }
   };
+  const homeTranslationsID = Object.fromEntries(
+    Object.entries(homeTranslations).map(([indonesian, english]) => [english, indonesian])
+  );
+  Object.assign(homeTranslationsID, {
+    'ESPORTS BOOSTING S42': 'JOKI ESPORTS S42',
+    '100% Manual No-Cheat': '100% Manual Tanpa Cheat',
+    'Mulai Rp 2.000 / Star': 'Mulai Rp 2.000 / Bintang',
+    'Starting at Rp 2,000 / Star': 'Mulai dari Rp 2.000 / Bintang',
+    'Choose Starting Rank': 'PILIH RANK AWAL',
+    'Choose Target Rank': 'PILIH RANK TUJUAN',
+    'Add-Ons & Request Hero': 'Add-on & Permintaan Hero',
+    'Request Hero Tertentu (A – Z)': 'Permintaan Hero Tertentu (A – Z)',
+    'Honor (25★ – 49★ • bisa ketik manual)': 'Honor (25★–49★ • bisa diisi manual)',
+    'Live Stream Match': 'Streaming Langsung',
+    'TIER RANK': 'TINGKAT RANK',
+    'TARGET': 'TUJUAN',
+    'Package Estimate Details': 'Rincian Estimasi Paket',
+    'Starting Rank': 'Rank Awal',
+    'Target Rank': 'Rank Tujuan',
+    'Service Type': 'Jenis Layanan',
+    'Total Stars / Wins': 'Total Bintang / Win',
+    'Average Rate / ★': 'Tarif Rata-rata / ★',
+    'Active Add-ons': 'Add-on Aktif',
+    'Volume Discount Saved': 'Penghematan Diskon Volume',
+    'Regular Boost': 'Joki Reguler',
+    'Duo Carry': 'Joki Gendong',
+    'FAST LANE': 'JALUR PRIORITAS',
+    'NO LOGIN REQUIRED': 'TANPA LOGIN',
+    'Estimated Total': 'Total Estimasi',
+    'Order Now': 'Order Sekarang'
+  });
   const originalText = new WeakMap();
   const originalAttributes = new WeakMap();
   let currentLanguage = 'ID';
@@ -420,26 +528,54 @@
     return `${leading}${replacement}${trailing}`;
   }
 
-  function translateHomeValue(value) {
-    if (homeTranslations[value]) return homeTranslations[value];
+  function translateHomeValue(value, language = currentLanguage) {
+    const translations = language === 'EN' ? homeTranslations : homeTranslationsID;
+    if (translations[value]) return translations[value];
+    if (language === 'EN') {
+      let match = value.match(/^(\d+) Hari : (\d{2}) Jam : (\d{2})m : (\d{2})d$/);
+      if (match) return `${match[1]} days : ${match[2]} hours : ${match[3]}m : ${match[4]}s`;
+      if (value === 'Reset Season S42 Sedang Berlangsung') return 'Season S42 reset in progress';
+    } else {
+      let match = value.match(/^(\d+) days : (\d{2}) hours : (\d{2})m : (\d{2})s$/);
+      if (match) return `${match[1]} Hari : ${match[2]} Jam : ${match[3]}m : ${match[4]}d`;
+      if (value === 'Season S42 reset in progress') return 'Reset Season S42 Sedang Berlangsung';
+      match = value.match(/^Currency changed to (.+)$/);
+      if (match) return `Mata uang diubah ke ${match[1]}`;
+      match = value.match(/^Automatic Discount: (\d+)% ACTIVE$/);
+      if (match) return `Diskon Otomatis: ${match[1]}% AKTIF`;
+      match = value.match(/^Save (\d+)%$/);
+      if (match) return `Hemat ${match[1]}%`;
+      match = value.match(/^(\d+) Guaranteed Wins$/);
+      if (match) return `${match[1]} Win Garansi`;
+      match = value.match(/^(\d+) Stars$/);
+      if (match) return `${match[1]} Bintang`;
+      match = value.match(/^Approx\. (\d+) hours$/);
+      if (match) return `± ${match[1]} Jam`;
+      match = value.match(/^Approx\. (\d+) days \((\d+) hours\)$/);
+      if (match) return `± ${match[1]} Hari (${match[2]} Jam)`;
+      match = value.match(/^(\d+)-Win Duo Carry Package$/);
+      if (match) return `Paket ${match[1]} Win Mabar`;
+      match = value.match(/^Showing (\d+) heroes \(A–Z\)$/);
+      if (match) return `Menampilkan ${match[1]} Hero (Urut A–Z)`;
+    }
     let match = value.match(/^Mata uang diubah ke (.+)$/);
-    if (match) return `Currency changed to ${match[1]}`;
+    if (match && language === 'EN') return `Currency changed to ${match[1]}`;
     match = value.match(/^Diskon Otomatis: (\d+)% AKTIF$/);
-    if (match) return `Automatic Discount: ${match[1]}% ACTIVE`;
+    if (match && language === 'EN') return `Automatic Discount: ${match[1]}% ACTIVE`;
     match = value.match(/^Hemat (\d+)%$/);
-    if (match) return `Save ${match[1]}%`;
+    if (match && language === 'EN') return `Save ${match[1]}%`;
     match = value.match(/^(\d+) Win Garansi$/);
-    if (match) return `${match[1]} Guaranteed Wins`;
+    if (match && language === 'EN') return `${match[1]} Guaranteed Wins`;
     match = value.match(/^(\d+) Bintang$/);
-    if (match) return `${match[1]} Stars`;
+    if (match && language === 'EN') return `${match[1]} Stars`;
     match = value.match(/^± (\d+) Jam$/);
-    if (match) return `Approx. ${match[1]} hours`;
+    if (match && language === 'EN') return `Approx. ${match[1]} hours`;
     match = value.match(/^± (\d+) Hari \((\d+) Jam\)$/);
-    if (match) return `Approx. ${match[1]} days (${match[2]} hours)`;
+    if (match && language === 'EN') return `Approx. ${match[1]} days (${match[2]} hours)`;
     match = value.match(/^Paket (\d+) Win Mabar$/);
-    if (match) return `${match[1]}-Win Duo Carry Package`;
+    if (match && language === 'EN') return `${match[1]}-Win Duo Carry Package`;
     match = value.match(/^Menampilkan (\d+) Hero \(Urut A–Z\)$/);
-    if (match) return `Showing ${match[1]} heroes (A–Z)`;
+    if (match && language === 'EN') return `Showing ${match[1]} heroes (A–Z)`;
     if (value === 'Belum ada hero dipilih (Booster bebas pilih meta terkuat)') {
       return 'No hero selected (the booster can choose a strong meta hero)';
     }
@@ -457,7 +593,7 @@
       if (!originalText.has(node)) originalText.set(node, node.nodeValue);
       const source = originalText.get(node);
       const trimmed = source.trim();
-      const translated = currentLanguage === 'EN' ? translateHomeValue(trimmed) : trimmed;
+      const translated = translateHomeValue(trimmed);
       node.nodeValue = preserveWhitespace(source, translated || trimmed);
     }
 
@@ -467,7 +603,7 @@
         if (sourceValue === null || sourceValue === undefined) return;
         if (!originalAttributes.has(element)) originalAttributes.set(element, {});
         originalAttributes.get(element)[attribute] = sourceValue;
-        const translated = currentLanguage === 'EN' ? translateHomeValue(sourceValue) : sourceValue;
+        const translated = translateHomeValue(sourceValue);
         element.setAttribute(attribute, translated || sourceValue);
       });
     });
@@ -481,6 +617,12 @@
     });
     document.querySelectorAll('[data-id-placeholder][data-en-placeholder]').forEach((element) => {
       element.placeholder = currentLanguage === 'EN' ? element.dataset.enPlaceholder : element.dataset.idPlaceholder;
+    });
+    document.querySelectorAll('[data-id-aria-label][data-en-aria-label]').forEach((element) => {
+      element.setAttribute('aria-label', currentLanguage === 'EN' ? element.dataset.enAriaLabel : element.dataset.idAriaLabel);
+    });
+    document.querySelectorAll('[data-id-title][data-en-title]').forEach((element) => {
+      element.title = currentLanguage === 'EN' ? element.dataset.enTitle : element.dataset.idTitle;
     });
     const pageName = document.body.dataset.page;
     const title = pageTitles[pageName];
@@ -577,17 +719,17 @@
           <a class="site-brand" id="siteBrandTrigger" href="/" aria-label="BengkelML" aria-controls="siteDrawer" aria-expanded="false" onclick="handleInfoBrandClick(event)">
             <span class="site-brand-mark">B</span><span class="site-brand-name">BENGKEL<span>ML</span><small>RANK SERVICE</small></span>
           </a>
-          <nav class="site-nav" aria-label="Primary navigation">${nav}</nav>
+          <nav class="site-nav" aria-label="Navigasi utama" data-id-aria-label="Navigasi utama" data-en-aria-label="Primary navigation">${nav}</nav>
           <div class="site-actions">
-            <button type="button" class="site-currency site-currency-top" onclick="cycleSiteCurrency()" title="Change currency"><span data-currency-code>IDR</span> ↻</button>
-            <label><span class="visually-hidden">Choose language</span><select class="site-language" data-language-picker aria-label="Choose language"><option value="ID">ID</option><option value="EN">ENG</option></select></label>
+            <button type="button" class="site-currency site-currency-top" onclick="cycleSiteCurrency()" title="Ganti mata uang" data-id-title="Ganti mata uang" data-en-title="Change currency"><span data-currency-code>IDR</span> ↻</button>
+            <label><span class="visually-hidden" data-id="Pilih bahasa" data-en="Choose language">Pilih bahasa</span><select class="site-language" data-language-picker aria-label="Pilih bahasa" data-id-aria-label="Pilih bahasa" data-en-aria-label="Choose language"><option value="ID">ID</option><option value="EN">ENG</option></select></label>
             <a class="site-order" href="/#sec-calculator" data-id="Order Sekarang" data-en="Order Now">Order Sekarang</a>
           </div>
         </div>
       </header>
       <div id="siteDrawerBackdrop" class="site-drawer-backdrop" onclick="openInfoMenu(false)"></div>
-      <aside id="siteDrawer" class="site-drawer" aria-label="Site navigation">
-        <div class="site-drawer-head"><span class="site-brand-name">BENGKEL<span>ML</span></span><button type="button" class="site-drawer-close" aria-label="Close menu" onclick="openInfoMenu(false)">×</button></div>
+      <aside id="siteDrawer" class="site-drawer" aria-label="Navigasi situs" data-id-aria-label="Navigasi situs" data-en-aria-label="Site navigation">
+        <div class="site-drawer-head"><span class="site-brand-name">BENGKEL<span>ML</span></span><button type="button" class="site-drawer-close" aria-label="Tutup menu" data-id-aria-label="Tutup menu" data-en-aria-label="Close menu" onclick="openInfoMenu(false)">×</button></div>
         <nav class="site-drawer-links">${drawerLinks}</nav>
         <button type="button" class="site-currency site-currency-drawer" onclick="cycleSiteCurrency()"><span data-currency-code>IDR</span> · <span data-id="Ganti mata uang" data-en="Change currency">Ganti mata uang</span></button>
         <div class="site-drawer-note" data-id="Jasa joki MLBB Season 42. Tanpa cheat, harga transparan, dan admin siap membantu." data-en="MLBB Season 42 rank boosting. No cheats, transparent pricing, and a helpful admin team."></div>
@@ -712,7 +854,6 @@
     const storedLanguage = localStorage.getItem('bengkelml-language') || 'ID';
     setSiteLanguage(storedLanguage);
     const observer = new MutationObserver((records) => {
-      if (currentLanguage !== 'EN') return;
       let hasAddedElements = false;
       records.forEach((record) => {
         record.addedNodes.forEach((node) => {
