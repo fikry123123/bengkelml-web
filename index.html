@@ -1,18 +1,3652 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#090812" />
-    <meta name="description" content="Jasa Joki Reguler dan Gendong Mobile Legends Season 42. Hitung harga, pilih paket, dan konfirmasi order ke BengkelML via WhatsApp." />
-    <meta property="og:title" content="BENGKELML — Joki MLBB S42 & Esports Boosting" />
-    <meta property="og:description" content="Joki rank dan gendong MLBB Season 42. Harga transparan, diskon otomatis, dan order WhatsApp." />
-    <meta property="og:image" content="/og-banner.png" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>BENGKELML — Joki MLBB S42 &amp; Esports Boosting</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>BENGKELML — Joki MLBB S42 &amp; Esports Boosting</title>
+  <style>
+    /* =========================================================================
+       1. STRICT EXPLICIT HEX RESET & HIGH-CONTRAST ESPORTS BASE
+       ========================================================================= */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      background-color: #090812 !important;
+      color: #f8fafc !important;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.45;
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      background-color: #090812 !important;
+      color: #f8fafc !important;
+      min-height: 100vh;
+      width: 100%;
+      overflow-x: hidden;
+      overscroll-behavior-y: none;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+      font-size: inherit;
+      color: #f8fafc;
+      background-color: transparent;
+      border: none;
+      outline: none;
+    }
+
+    button {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    svg {
+      display: inline-block;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+
+    /* Hide spin arrows on number inputs for clean keyboard entry */
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background-color: #090812;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: #2c2754;
+      border-radius: 4px;
+    }
+
+    /* =========================================================================
+       2. APP SHELL & BOLD TOP HEADER (NO BOTTOM NAVBAR)
+       ========================================================================= */
+    .app-shell {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      background-color: #090812;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .top-header {
+      position: sticky;
+      top: 0;
+      z-index: 45;
+      width: 100%;
+      background-color: #0c0a17;
+      border-bottom: 2px solid #2c2754;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.7);
+    }
+
+    .header-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      height: 66px;
+      padding: 0 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .icon-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background-color: #16132b;
+      border: 2px solid #2c2754;
+      color: #f8fafc;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .icon-btn:active {
+      background-color: #252047;
+      border-color: #fbbf24;
+    }
+
+    .logo-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      border: 2px solid #fde68a;
+      color: #090812;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .brand-title {
+      font-size: 17px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      color: #fbbf24;
+      line-height: 1.05;
+    }
+
+    .brand-title span {
+      color: #22d3ee;
+    }
+
+    .brand-sub {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #94a3b8;
+      text-transform: uppercase;
+    }
+
+    .desktop-quick-links {
+      display: none;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-anchor-btn {
+      padding: 7px 12px;
+      border-radius: 8px;
+      background-color: #121024;
+      border: 1.5px solid #2c2754;
+      color: #cbd5e1;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .nav-anchor-btn:hover {
+      border-color: #fbbf24;
+      color: #fbbf24;
+    }
+
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .nav-dropdown-menu {
+      position: absolute;
+      z-index: 50;
+      top: 100%;
+      left: 0;
+      min-width: 175px;
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 8px;
+      border: 1.5px solid #2c2754;
+      border-radius: 10px;
+      background-color: #121024;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, .55);
+    }
+
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown:focus-within .nav-dropdown-menu {
+      display: flex;
+    }
+
+    .nav-dropdown-menu .nav-anchor-btn {
+      width: 100%;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      flex-shrink: 0;
+    }
+
+    .language-picker select {
+      height: 36px;
+      min-width: 48px;
+      padding: 0 7px;
+      border: 2px solid #2c2754;
+      border-radius: 9px;
+      background-color: #16132b;
+      font-size: 11px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .language-picker option {
+      color: #f8fafc;
+      background-color: #16132b;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .tools-toggle-pill {
+      height: 36px;
+      padding: 0 11px;
+      border-radius: 9px;
+      background-color: #132536;
+      border: 2px solid #22d3ee;
+      color: #22d3ee;
+      font-size: 11.5px;
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .tools-toggle-pill.active {
+      background-color: #22d3ee;
+      color: #090812;
+    }
+
+    .currency-btn {
+      height: 36px;
+      padding: 0 10px;
+      border-radius: 9px;
+      background-color: #16132b;
+      border: 2px solid #2c2754;
+      color: #f8fafc;
+      font-size: 11.5px;
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .header-wa-btn {
+      height: 36px;
+      padding: 0 12px;
+      border-radius: 9px;
+      background-color: #10b981;
+      border: 2px solid #6ee7b7;
+      color: #052016;
+      font-size: 11.5px;
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      text-transform: uppercase;
+    }
+
+    /* =========================================================================
+       3. MAIN CONTAINER & HERO SECTION
+       ========================================================================= */
+    .main-container {
+      padding: 14px 14px 110px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .season-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+      background-color: #121024;
+      border: 2px solid #2c2754;
+      border-radius: 12px;
+      padding: 10px 13px;
+    }
+
+    .s42-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 11px;
+      border-radius: 7px;
+      background-color: #2b1f12;
+      border: 1.5px solid #f59e0b;
+      color: #fbbf24;
+      font-size: 11.5px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #10b981;
+    }
+
+    .countdown-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 12px;
+      border-radius: 7px;
+      background-color: #0f2433;
+      border: 1.5px solid #22d3ee;
+      color: #22d3ee;
+      font-size: 12px;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .hero-banner {
+      background: linear-gradient(145deg, #17142e 0%, #0f0d1f 100%);
+      border: 2px solid #38316b;
+      border-radius: 14px;
+      padding: 18px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+    }
+
+    .hero-kicker {
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      color: #fbbf24;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .hero-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: 0.01em;
+      margin-bottom: 7px;
+    }
+
+    .hero-desc {
+      font-size: 13px;
+      color: #cbd5e1;
+      margin-bottom: 13px;
+    }
+
+    .usp-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .usp-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 11px;
+      border-radius: 8px;
+      background-color: #1b1736;
+      border: 1.5px solid #352e66;
+      color: #f8fafc;
+      font-size: 11.5px;
+      font-weight: 800;
+    }
+
+    /* =========================================================================
+       4. MODE SWITCHER & WORKSPACE GRID
+       ========================================================================= */
+    .mode-switcher {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      background-color: #0e0c1c;
+      border: 2px solid #2c2754;
+      border-radius: 12px;
+      padding: 6px;
+    }
+
+    .mode-btn {
+      height: 44px;
+      border-radius: 9px;
+      background-color: #16132b;
+      border: 1.5px solid #28234d;
+      color: #94a3b8;
+      font-size: 13.5px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+    }
+
+    .mode-btn.active {
+      background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+      border: 2px solid #fef08a;
+      color: #090812;
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35);
+    }
+
+    .mode-info-bar {
+      margin-top: 8px;
+      padding: 10px 13px;
+      border-radius: 10px;
+      background-color: #121024;
+      border: 1.5px solid #2c2754;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 12px;
+      color: #cbd5e1;
+      font-weight: 600;
+    }
+
+    .calc-two-col {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .calc-left-col,
+    .calc-right-col {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      min-width: 0;
+    }
+
+    .section-card {
+      background-color: #121024;
+      border: 2px solid #2c2754;
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      min-width: 0;
+    }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .step-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .step-num {
+      width: 26px;
+      height: 26px;
+      border-radius: 7px;
+      background-color: #241d47;
+      border: 2px solid #fbbf24;
+      color: #fbbf24;
+      font-size: 12.5px;
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-title {
+      font-size: 15px;
+      font-weight: 900;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .status-pill-cyan {
+      padding: 4px 10px;
+      border-radius: 7px;
+      background-color: #0e2536;
+      border: 1.5px solid #22d3ee;
+      color: #22d3ee;
+      font-size: 11.5px;
+      font-weight: 900;
+    }
+
+    .status-pill-green {
+      padding: 4px 10px;
+      border-radius: 7px;
+      background-color: #0d2b22;
+      border: 1.5px solid #10b981;
+      color: #34d399;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    /* =========================================================================
+       5. RANK GRID, DIVISION PILLS & KEYBOARD NUMERIC STAR INPUTS
+       ========================================================================= */
+    .rank-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+    .rank-card-btn {
+      background-color: #191633;
+      border: 2px solid #2e2859;
+      border-radius: 11px;
+      padding: 10px 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 4px;
+      position: relative;
+      min-height: 90px;
+    }
+
+    .rank-card-btn.active {
+      background-color: #261e45;
+      border: 2px solid #fbbf24;
+      box-shadow: 0 0 16px rgba(251, 191, 36, 0.28);
+    }
+
+    .rank-card-btn.target-active {
+      background-color: #13283d;
+      border: 2px solid #22d3ee;
+      box-shadow: 0 0 16px rgba(34, 211, 238, 0.28);
+    }
+
+    .rank-card-btn.locked {
+      opacity: 0.32;
+      background-color: #0d0b1a;
+      border-color: #1e1a3b;
+      cursor: not-allowed;
+    }
+
+    .rank-emblem-wrap {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .rank-name {
+      font-size: 11.5px;
+      font-weight: 900;
+      color: #f8fafc;
+      text-transform: uppercase;
+    }
+
+    .rank-card-btn.active .rank-name {
+      color: #fbbf24;
+    }
+
+    .rank-card-btn.target-active .rank-name {
+      color: #22d3ee;
+    }
+
+    .rank-rate {
+      font-size: 10px;
+      font-weight: 800;
+      color: #94a3b8;
+    }
+
+    .lock-tag {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      font-size: 8.5px;
+      background-color: #3b1219;
+      border: 1px solid #f87171;
+      color: #fca5a5;
+      padding: 1px 4px;
+      border-radius: 4px;
+      font-weight: 900;
+    }
+
+    .division-box {
+      background-color: #0d0b1a;
+      border: 1.5px solid #29234f;
+      border-radius: 11px;
+      padding: 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .division-label {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #cbd5e1;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .division-pills {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 6px;
+    }
+
+    .division-pills.cols-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .division-pills.cols-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .div-pill {
+      height: 38px;
+      border-radius: 8px;
+      background-color: #191633;
+      border: 1.5px solid #30295e;
+      color: #e2e8f0;
+      font-size: 12.5px;
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .div-pill.active {
+      background-color: #f59e0b;
+      border-color: #fef08a;
+      color: #090812;
+    }
+
+    .div-pill.target-active {
+      background-color: #22d3ee;
+      border-color: #a5f3fc;
+      color: #090812;
+    }
+
+    .div-pill.locked {
+      opacity: 0.32;
+      cursor: not-allowed;
+    }
+
+    /* Bold Keyboard Numeric Input + Stepper Bar */
+    .stepper-card {
+      background-color: #0d0b1a;
+      border: 1.5px solid #2c2754;
+      border-radius: 12px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .stepper-info-title {
+      font-size: 13.5px;
+      font-weight: 900;
+      color: #ffffff;
+    }
+
+    .stepper-info-sub {
+      font-size: 11.5px;
+      color: #94a3b8;
+      font-weight: 600;
+    }
+
+    .stepper-controls {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: #16132b;
+      border: 2px solid #352e66;
+      border-radius: 11px;
+      padding: 4px;
+    }
+
+    .step-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background-color: #241f47;
+      border: 1.5px solid #3f3778;
+      color: #ffffff;
+      font-size: 13.5px;
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step-btn:active {
+      background-color: #fbbf24;
+      color: #090812;
+    }
+
+    .star-input-wrap {
+      display: inline-flex;
+      align-items: center;
+      background-color: #090812;
+      border: 1.5px solid #fbbf24;
+      border-radius: 8px;
+      padding: 0 7px;
+      height: 36px;
+    }
+
+    .star-input-wrap.cyan {
+      border-color: #22d3ee;
+    }
+
+    .star-num-input {
+      width: 48px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 900;
+      color: #fbbf24;
+      background-color: transparent;
+    }
+
+    .star-input-wrap.cyan .star-num-input {
+      color: #22d3ee;
+    }
+
+    .star-unit {
+      font-size: 13px;
+      font-weight: 900;
+      color: #fbbf24;
+    }
+
+    .star-input-wrap.cyan .star-unit {
+      color: #22d3ee;
+    }
+
+    /* =========================================================================
+       6. STEP 3 ADD-ONS & HORIZONTAL A-Z HERO SCROLLER (133 HEROES)
+       ========================================================================= */
+    .addon-card {
+      background-color: #17142e;
+      border: 1.5px solid #2e2859;
+      border-radius: 12px;
+      padding: 13px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .addon-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .addon-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .addon-icon-box {
+      width: 38px;
+      height: 38px;
+      border-radius: 9px;
+      background-color: #221d45;
+      border: 1.5px solid #3c3473;
+      color: #fbbf24;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .addon-title {
+      font-size: 13.5px;
+      font-weight: 900;
+      color: #ffffff;
+    }
+
+    .addon-desc {
+      font-size: 11.5px;
+      color: #94a3b8;
+    }
+
+    .price-tag-pill {
+      padding: 4px 9px;
+      border-radius: 7px;
+      background-color: #2b1f12;
+      border: 1.5px solid #f59e0b;
+      color: #fbbf24;
+      font-size: 11.5px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .toggle-switch {
+      width: 50px;
+      height: 28px;
+      border-radius: 999px;
+      background-color: #090812;
+      border: 2px solid #3c3470;
+      padding: 2px;
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .toggle-switch.on {
+      background-color: #f59e0b;
+      border-color: #fef08a;
+    }
+
+    .toggle-knob {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: #94a3b8;
+      transform: translateX(0);
+      transition: transform 0.16s ease;
+    }
+
+    .toggle-switch.on .toggle-knob {
+      background-color: #090812;
+      transform: translateX(22px);
+    }
+
+    .role-filter-strip {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 3px;
+    }
+
+    .role-chip {
+      padding: 6px 12px;
+      border-radius: 8px;
+      background-color: #0d0b1a;
+      border: 1.5px solid #2e2859;
+      color: #cbd5e1;
+      font-size: 11.5px;
+      font-weight: 800;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .role-chip.active {
+      background-color: #22d3ee;
+      border-color: #a5f3fc;
+      color: #090812;
+      font-weight: 900;
+    }
+
+    .search-box {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .search-icon-left {
+      position: absolute;
+      left: 11px;
+      color: #94a3b8;
+      pointer-events: none;
+    }
+
+    .search-input, .field-input {
+      width: 100%;
+      height: 40px;
+      border-radius: 9px;
+      background-color: #090812;
+      border: 1.5px solid #352e66;
+      padding: 0 34px 0 34px;
+      color: #ffffff;
+      font-size: 12.5px;
+      font-weight: 600;
+    }
+
+    .field-input {
+      padding: 0 12px;
+    }
+
+    .search-input:focus, .field-input:focus {
+      border-color: #22d3ee;
+    }
+
+    .search-input::placeholder, .field-input::placeholder {
+      color: #64748b;
+    }
+
+    .search-clear-btn {
+      position: absolute;
+      right: 8px;
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background-color: #252047;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 900;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .search-clear-btn.visible {
+      display: inline-flex;
+    }
+
+    .selected-heroes-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 10px;
+      border-radius: 9px;
+      background-color: #0d0b1a;
+      border: 1.5px dashed #3d3573;
+    }
+
+    .selected-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 7px;
+      background-color: #2b1f12;
+      border: 1.5px solid #f59e0b;
+      color: #fbbf24;
+      font-size: 11.5px;
+      font-weight: 900;
+    }
+
+    /* Horizontal Scrollable A-Z Hero Strip */
+    .hero-horizontal-scroll {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 8px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 4px 2px 8px;
+      width: 100%;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .hero-chip-card {
+      flex: 0 0 auto;
+      min-width: 108px;
+      padding: 9px 11px;
+      border-radius: 10px;
+      background-color: #0d0b1a;
+      border: 1.5px solid #2e2859;
+      color: #f8fafc;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .hero-chip-card.selected {
+      background-color: #291e14;
+      border: 2px solid #fbbf24;
+      color: #fbbf24;
+      box-shadow: 0 0 12px rgba(251, 191, 36, 0.25);
+    }
+
+    .hero-chip-name {
+      font-size: 12px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .hero-chip-role {
+      font-size: 10px;
+      font-weight: 700;
+      color: #94a3b8;
+      white-space: nowrap;
+    }
+
+    /* =========================================================================
+       7. RECEIPT PANEL, VOLUME DISCOUNT & BENGKELML SHIELD
+       ========================================================================= */
+    .receipt-card {
+      background: linear-gradient(160deg, #17142e 0%, #100e21 100%);
+      border: 2px solid #3f3778;
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .route-preview-box {
+      background-color: #090812;
+      border: 1.5px solid #2c2754;
+      border-radius: 11px;
+      padding: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .route-node {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .receipt-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 12.5px;
+    }
+
+    .receipt-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .receipt-label {
+      color: #94a3b8;
+      font-weight: 600;
+    }
+
+    .receipt-val {
+      color: #ffffff;
+      font-weight: 800;
+      text-align: right;
+    }
+
+    .discount-box {
+      background-color: #0c241e;
+      border: 1.5px solid #10b981;
+      border-radius: 10px;
+      padding: 10px 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .discount-bar-bg {
+      width: 100%;
+      height: 8px;
+      border-radius: 4px;
+      background-color: #061411;
+      overflow: hidden;
+    }
+
+    .discount-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #10b981 0%, #fbbf24 100%);
+      border-radius: 4px;
+      width: 25%;
+      transition: width 0.25s ease;
+    }
+
+    .payment-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pay-badge {
+      padding: 6px 10px;
+      border-radius: 8px;
+      background-color: #191633;
+      border: 1.5px solid #2e2859;
+      color: #e2e8f0;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .pay-badge.active {
+      background-color: #2b1f12;
+      border-color: #fbbf24;
+      color: #fbbf24;
+    }
+
+    .shield-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 11px;
+      border-radius: 8px;
+      background-color: #0d2b22;
+      border: 1.5px solid #10b981;
+      color: #34d399;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .shield-body {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .shield-body.collapsed {
+      display: none;
+    }
+
+    .shield-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .shield-item {
+      background-color: #0d0b1a;
+      border: 1.5px solid #29234f;
+      border-radius: 10px;
+      padding: 11px;
+    }
+
+    /* =========================================================================
+       8. PRICELIST TABLE, STEPS, FEATURES, TESTIMONIALS, FAQ & TOOLS PANEL
+       ========================================================================= */
+    .info-two-col {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .pricelist-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    .pricelist-table th {
+      text-align: left;
+      padding: 10px 8px;
+      background-color: #090812;
+      color: #94a3b8;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      border-bottom: 2px solid #2c2754;
+    }
+
+    .pricelist-table td {
+      padding: 10px 8px;
+      border-bottom: 1.5px solid #211d42;
+      color: #f8fafc;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+    }
+
+    .feature-2col-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+    }
+
+    .testi-grid-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .testi-card {
+      background-color: #17142e;
+      border: 1.5px solid #2e2859;
+      border-radius: 12px;
+      padding: 13px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .faq-item {
+      background-color: #17142e;
+      border: 1.5px solid #2e2859;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 12px 13px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 12.5px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 10px 13px 13px;
+      font-size: 12px;
+      color: #cbd5e1;
+      border-top: 1.5px solid #26214a;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    /* Collapsible Tools Gratis Section */
+    .tools-drawer-section {
+      background-color: #100e21;
+      border: 2px solid #22d3ee;
+      border-radius: 14px;
+      padding: 16px;
+      display: none;
+      flex-direction: column;
+      gap: 14px;
+      box-shadow: 0 12px 32px rgba(34, 211, 238, 0.14);
+    }
+
+    .tools-drawer-section.open {
+      display: flex;
+    }
+
+    .bottom-tools-trigger-bar {
+      background: linear-gradient(135deg, #121b2e 0%, #16132b 100%);
+      border: 2px solid #22d3ee;
+      border-radius: 13px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* =========================================================================
+       9. ACTION BUTTONS & MOBILE FLOATING CHECKOUT BAR (NO BOTTOM NAVBAR)
+       ========================================================================= */
+    .primary-action-btn {
+      height: 42px;
+      padding: 0 15px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+      border: 2px solid #fef08a;
+      color: #090812;
+      font-size: 12.5px;
+      font-weight: 900;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .secondary-action-btn {
+      height: 40px;
+      padding: 0 14px;
+      border-radius: 10px;
+      background-color: #191633;
+      border: 1.5px solid #352e66;
+      color: #f8fafc;
+      font-size: 12px;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .wa-cta-btn {
+      height: 46px;
+      padding: 0 16px;
+      border-radius: 11px;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      border: 2px solid #6ee7b7;
+      color: #041c13;
+      font-size: 13.5px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      box-shadow: 0 6px 22px rgba(16, 185, 129, 0.35);
+    }
+
+    .desktop-cta-card {
+      display: none;
+    }
+
+    /* Mobile-only floating bottom checkout dock (replaces bottom navbar) */
+    .mobile-checkout-dock {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 40;
+      background-color: #0c0a17;
+      border-top: 2px solid #352e66;
+      padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px));
+      box-shadow: 0 -8px 28px rgba(0, 0, 0, 0.75);
+    }
+
+    .dock-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    /* =========================================================================
+       10. MODALS, DRAWER & TOAST
+       ========================================================================= */
+    .overlay-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      background-color: rgba(4, 3, 10, 0.86);
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 12px;
+    }
+
+    .overlay-backdrop.open {
+      display: flex;
+    }
+
+    .modal-sheet {
+      width: 100%;
+      max-width: 480px;
+      background-color: #121024;
+      border: 2px solid #3f3778;
+      border-radius: 16px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-height: 86vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 52px rgba(0, 0, 0, 0.85);
+    }
+
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 65;
+      background-color: rgba(4, 3, 10, 0.84);
+      display: none;
+    }
+
+    .drawer-backdrop.open {
+      display: block;
+    }
+
+    .drawer-panel {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 70;
+      width: 285px;
+      max-width: 84vw;
+      background-color: #0e0c1c;
+      border-right: 2px solid #2c2754;
+      padding: 16px;
+      display: none;
+      flex-direction: column;
+      gap: 11px;
+      overflow-y: auto;
+    }
+
+    .drawer-panel.open {
+      display: flex;
+    }
+
+    .drawer-currency {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .toast-banner {
+      position: fixed;
+      top: 76px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 80;
+      background-color: #1c1838;
+      border: 2px solid #fbbf24;
+      color: #ffffff;
+      padding: 9px 16px;
+      border-radius: 9px;
+      font-size: 12px;
+      font-weight: 900;
+      display: none;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+      white-space: nowrap;
+    }
+
+    .toast-banner.show {
+      display: block;
+    }
+
+    /* =========================================================================
+       11. DESKTOP ADAPTIVE BREAKPOINT (>= 960px)
+       ========================================================================= */
+    @media (min-width: 960px) {
+      .app-shell {
+        border-left: 2px solid #231f45;
+        border-right: 2px solid #231f45;
+      }
+
+      .header-inner {
+        padding: 0 24px;
+      }
+
+      .mobile-menu-trigger {
+        display: none;
+      }
+
+      .main-container {
+        padding: 20px 24px 44px;
+        gap: 22px;
+      }
+
+      .calc-two-col {
+        display: grid;
+        grid-template-columns: 1.35fr 0.95fr;
+        align-items: start;
+        gap: 22px;
+      }
+
+      .calc-right-col {
+        position: sticky;
+        top: 82px;
+      }
+
+      .desktop-cta-card {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #1b1736;
+        border: 2px solid #fbbf24;
+        border-radius: 12px;
+        padding: 14px;
+      }
+
+      .mobile-checkout-dock {
+        display: none !important;
+      }
+
+      .info-two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+        align-items: start;
+      }
+
+      .steps-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .feature-2col-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .testi-grid-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .overlay-backdrop {
+        align-items: center;
+      }
+    }
+
+    @media (min-width: 1080px) {
+      .desktop-quick-links {
+        display: flex;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .header-inner {
+        height: auto;
+        min-height: 62px;
+        padding: 8px 10px;
+        flex-wrap: nowrap;
+        gap: 6px;
+      }
+
+      .brand-group {
+        flex: 0 1 auto;
+        gap: 8px;
+      }
+
+      .logo-badge {
+        width: 32px;
+        height: 32px;
+      }
+
+      .brand-title {
+        font-size: 14px;
+      }
+
+      .brand-sub {
+        font-size: 8px;
+      }
+
+      .header-actions {
+        width: auto;
+        flex: 0 0 auto;
+        justify-content: flex-end;
+        gap: 5px;
+      }
+
+      .header-wa-btn {
+        flex: 0 0 auto;
+        height: 34px;
+        padding: 0 8px;
+        justify-content: center;
+        white-space: nowrap;
+        font-size: 9.5px;
+      }
+
+      .currency-btn {
+        display: none;
+      }
+
+      .drawer-currency {
+        display: inline-flex;
+      }
+
+      .language-picker select {
+        height: 34px;
+        min-width: 42px;
+        padding: 0 5px;
+        font-size: 10px;
+      }
+
+      .main-container {
+        padding: 12px 12px calc(120px + env(safe-area-inset-bottom, 0px));
+        gap: 14px;
+      }
+
+      .mode-info-bar {
+        align-items: flex-start;
+      }
+
+      .mode-info-bar > span:first-child {
+        min-width: 0;
+      }
+
+      .mobile-checkout-dock {
+        padding-right: 12px;
+        padding-left: 12px;
+      }
+
+      .dock-inner > div {
+        min-width: 0;
+      }
+
+      #txtDockSubtitle {
+        max-width: 42vw;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .dock-inner .wa-cta-btn {
+        flex: 0 0 auto;
+        min-height: 44px;
+        padding: 0 12px;
+        font-size: 11.5px;
+        white-space: nowrap;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .header-inner {
+        padding-right: 8px;
+        padding-left: 8px;
+        gap: 4px;
+      }
+
+      .brand-group {
+        gap: 6px;
+      }
+
+      .logo-badge {
+        width: 30px;
+        height: 30px;
+      }
+
+      .brand-title {
+        font-size: 12px;
+      }
+
+      .brand-sub {
+        font-size: 7px;
+      }
+
+      .header-actions {
+        gap: 4px;
+      }
+
+      .header-wa-btn {
+        padding: 0 7px;
+        font-size: 9px;
+      }
+
+      .main-container {
+        padding-right: 10px;
+        padding-left: 10px;
+      }
+
+      .hero-banner {
+        padding: 15px;
+      }
+
+      .dock-inner {
+        gap: 6px;
+      }
+
+      .dock-inner .wa-cta-btn {
+        padding: 0 9px;
+        font-size: 10.5px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="toastBanner" class="toast-banner"></div>
+
+  <div class="app-shell">
+    <!-- =======================================================================
+         TOP STICKY HEADER (WITH TOOLS SHOW/HIDE TOGGLE)
+         ======================================================================= -->
+    <header class="top-header">
+      <div class="header-inner">
+        <button type="button" class="brand-group" id="brandMenuTrigger" aria-label="Buka menu navigasi" aria-controls="drawerPanel" aria-expanded="false" onclick="if(window.matchMedia('(max-width: 1079px)').matches)toggleDrawer(true);else scrollToSection('sec-calculator');">
+          <div class="logo-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#090812" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.7 5.8 21 7 14 2 9.3 9 8.5 12 2"/>
+            </svg>
+          </div>
+          <div>
+            <div class="brand-title">BENGKEL<span>ML</span></div>
+            <div class="brand-sub">Esports Boosting S42</div>
+          </div>
+        </button>
+
+        <!-- Desktop Section Anchors -->
+        <nav class="desktop-quick-links" aria-label="Navigasi Cepat">
+          <button type="button" class="nav-anchor-btn" onclick="scrollToSection('sec-pricelist')">Harga</button>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-anchor-btn" aria-haspopup="true">Joki <span aria-hidden="true">⌄</span></button>
+            <div class="nav-dropdown-menu">
+              <button type="button" class="nav-anchor-btn" onclick="setServiceMode('reguler');scrollToSection('sec-calculator');">Joki Reguler</button>
+              <button type="button" class="nav-anchor-btn" onclick="setServiceMode('gendong');scrollToSection('sec-calculator');">Joki Gendong</button>
+            </div>
+          </div>
+          <button type="button" id="btnHeaderToolsToggle" class="tools-toggle-pill" onclick="toggleToolsPanel(true)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 1 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            <span id="txtHeaderToolsLabel">Tools Gratis</span>
+          </button>
+          <button type="button" class="nav-anchor-btn" onclick="scrollToSection('sec-faq')">FAQ</button>
+        </nav>
+
+        <div class="header-actions">
+          <button type="button" class="currency-btn" onclick="cycleCurrency()" title="Ganti Mata Uang">
+            <span data-currency-code>IDR</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <label class="language-picker">
+            <span class="visually-hidden">Pilih bahasa</span>
+            <select aria-label="Pilih bahasa">
+              <option value="ID">ID</option>
+              <option value="EN">ENG</option>
+              <option value="MS">MY</option>
+            </select>
+          </label>
+          <button type="button" class="header-wa-btn" onclick="openCheckoutModal()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#052016" stroke-width="2.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            <span>Order Sekarang</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- =======================================================================
+         MAIN CONTENT STREAM
+         ======================================================================= -->
+    <main class="main-container">
+      <!-- Real-Time Season 42 (S42) Bar -->
+      <div class="season-bar">
+        <span class="s42-badge">
+          <span class="live-dot"></span>
+          SEASON 42 (S42) MLBB AKTIF
+        </span>
+        <div class="countdown-box" title="Hitung mundur real-time berakhirnya Season 42 MLBB">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2.4"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>S42 Berakhir: <strong id="s42CountdownText">Menghitung...</strong></span>
+        </div>
+      </div>
+
+      <!-- Hero Banner -->
+      <div class="hero-banner" id="sec-calculator">
+        <div class="hero-kicker">Kalkulator Joki &amp; Gendong Instan S42</div>
+        <h1 class="hero-title">Joki MLBB Cepat, Tegas &amp; Bergaransi</h1>
+        <p class="hero-desc">Pilihan ex-pro player &amp; top global Immortal. Hitung estimasi harga transparan dengan input bintang langsung dan diskon volume otomatis hingga 20%.</p>
+        <div class="usp-strip">
+          <span class="usp-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.6"><polyline points="20 6 9 17 4 12"/></svg>
+            100% Manual No-Cheat
+          </span>
+          <span class="usp-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Garansi Kalah Ganti Bintang
+          </span>
+          <span class="usp-chip">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            Mulai Rp 2.000 / Star
+          </span>
+        </div>
+      </div>
+
+      <!-- Segmented Mode Switcher -->
+      <div>
+        <div class="mode-switcher">
+          <button type="button" id="btnModeReguler" class="mode-btn active" onclick="setServiceMode('reguler')">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><rect x="2" y="6" width="20" height="12" rx="4"/><line x1="6" y1="12" x2="10" y2="12"/><line x1="8" y1="10" x2="8" y2="14"/><circle cx="15" cy="11" r="1"/><circle cx="18" cy="13" r="1"/></svg>
+            Joki Reguler
+          </button>
+          <button type="button" id="btnModeGendong" class="mode-btn" onclick="setServiceMode('gendong')">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Gendong (Mabar)
+          </button>
+        </div>
+        <div class="mode-info-bar">
+          <span id="txtModeDesc">Akun dimainkan langsung oleh Ex-Pro Booster (Privasi &amp; Cepat).</span>
+          <span id="txtModeBadge" style="color:#22d3ee;font-weight:900;font-size:11px;white-space:nowrap;">FAST LANE</span>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           2-COLUMN CALCULATOR WORKSPACE (LEFT: STEPS, RIGHT: RECEIPT & SHIELD)
+           ===================================================================== -->
+      <div class="calc-two-col">
+        <div class="calc-left-col">
+          <!-- GENDONG SUB-MODE CARD -->
+          <div class="section-card" id="gendongSubModeCard" style="display:none;border-color:#fbbf24;">
+            <div class="step-header">
+              <span style="font-size:13px;font-weight:900;color:#fbbf24;text-transform:uppercase;">Paket Joki Gendong (Tanpa Login)</span>
+              <span class="status-pill-green">Garansi Ganti Win</span>
+            </div>
+            <div class="mode-switcher">
+              <button type="button" id="btnGendongPerRank" class="mode-btn active" style="height:38px;font-size:12px;" onclick="setGendongBillingType('per_rank')">
+                Per Rank (Target Bintang)
+              </button>
+              <button type="button" id="btnGendongPerWin" class="mode-btn" style="height:38px;font-size:12px;" onclick="setGendongBillingType('per_win')">
+                Per Win (1 / 3 / 5 Win)
+              </button>
+            </div>
+            <div id="gendongWinPackageBox" style="display:none;">
+              <div class="division-pills cols-3">
+                <button type="button" class="div-pill active" id="winPack1" onclick="setGendongWinCount(1)">1 Win</button>
+                <button type="button" class="div-pill" id="winPack3" onclick="setGendongWinCount(3)">3 Win</button>
+                <button type="button" class="div-pill" id="winPack5" onclick="setGendongWinCount(5)">5 Win (Hemat 5%)</button>
+              </div>
+            </div>
+            <div>
+              <label style="font-size:11.5px;color:#cbd5e1;font-weight:700;display:block;margin-bottom:5px;">ID &amp; Server MLBB Kamu (Opsional untuk Mabar)</label>
+              <input type="text" id="inpGendongMlbbId" class="field-input" placeholder="Contoh: 123456789 (2345)" oninput="recalculateAll()" />
+            </div>
+          </div>
+
+          <!-- STEP 1: RANK AWAL -->
+          <div class="section-card">
+            <div class="step-header">
+              <div class="step-title-wrap">
+                <span class="step-num">1</span>
+                <h2 class="step-title">Pilih Rank Awal</h2>
+              </div>
+              <span class="status-pill-cyan" id="lblStartRankStatus">Epic II • 3★</span>
+            </div>
+
+            <div class="rank-grid" id="startRankGrid"></div>
+
+            <div class="division-box" id="startDivisionBox">
+              <div class="division-label">
+                <span>Divisi Rank Awal</span>
+                <span id="lblStartDivHint" style="color:#fbbf24;">Epic V – Epic I</span>
+              </div>
+              <div class="division-pills" id="startDivisionPills"></div>
+            </div>
+
+            <div class="stepper-card">
+              <div>
+                <div class="stepper-info-title">Bintang Saat Ini</div>
+                <div class="stepper-info-sub" id="lblStartStarRange">Ketik angka atau tekan − / + (0★ – 5★)</div>
+              </div>
+              <div class="stepper-controls">
+                <button type="button" class="step-btn" onclick="adjustStartStars(-1)" aria-label="Kurangi Bintang Awal">−</button>
+                <div class="star-input-wrap">
+                  <input type="number" id="inpStartStars" class="star-num-input" value="3" min="0" max="5" inputmode="numeric" onchange="handleStartStarInput(this.value)" onblur="handleStartStarInput(this.value)" />
+                  <span class="star-unit">★</span>
+                </div>
+                <button type="button" class="step-btn" onclick="adjustStartStars(1)" aria-label="Tambah Bintang Awal">+</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 2: RANK TUJUAN -->
+          <div class="section-card" id="step2TargetCard">
+            <div class="step-header">
+              <div class="step-title-wrap">
+                <span class="step-num">2</span>
+                <h2 class="step-title">Pilih Rank Tujuan</h2>
+              </div>
+              <span class="status-pill-cyan" id="lblTargetRankStatus">Honor • 25★</span>
+            </div>
+
+            <div class="rank-grid" id="targetRankGrid"></div>
+
+            <div class="division-box" id="targetDivisionBox" style="display:none;">
+              <div class="division-label">
+                <span>Divisi Rank Tujuan</span>
+                <span id="lblTargetDivHint" style="color:#22d3ee;">Pilih divisi tujuan</span>
+              </div>
+              <div class="division-pills" id="targetDivisionPills"></div>
+            </div>
+
+            <div class="stepper-card">
+              <div>
+                <div class="stepper-info-title">Bintang Rank Tujuan</div>
+                <div class="stepper-info-sub" id="lblTargetStarRange">Mythic Honor (25★ – 49★)</div>
+              </div>
+              <div class="stepper-controls">
+                <button type="button" class="step-btn" onclick="adjustTargetStars(-5)" title="-5 Bintang">-5</button>
+                <button type="button" class="step-btn" onclick="adjustTargetStars(-1)" title="-1 Bintang">-1</button>
+                <div class="star-input-wrap cyan">
+                  <input type="number" id="inpTargetStars" class="star-num-input" value="25" min="25" max="49" inputmode="numeric" onchange="handleTargetStarInput(this.value)" onblur="handleTargetStarInput(this.value)" />
+                  <span class="star-unit">★</span>
+                </div>
+                <button type="button" class="step-btn" onclick="adjustTargetStars(1)" title="+1 Bintang">+1</button>
+                <button type="button" class="step-btn" onclick="adjustTargetStars(5)" title="+5 Bintang">+5</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 3: ADD-ONS & REQUEST HERO (A-Z HORIZONTAL SCROLL) -->
+          <div class="section-card">
+            <div class="step-header">
+              <div class="step-title-wrap">
+                <span class="step-num">3</span>
+                <h2 class="step-title">Add-Ons &amp; Request Hero</h2>
+              </div>
+              <span class="status-pill-green">Opsional</span>
+            </div>
+
+            <!-- 3A. Request Hero Tertentu (133 Hero Roster, Sorted A-Z, Horizontal Scroll) -->
+            <div class="addon-card" id="addonHeroBox">
+              <div class="addon-row">
+                <div class="addon-left">
+                  <div class="addon-icon-box">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2.3"><path d="M14.5 17.5L3 6V3h3l11.5 11.5"/><path d="M13 19l6-6"/><path d="M16 16l4 4"/><path d="M19 21l2-2"/></svg>
+                  </div>
+                  <div>
+                    <div class="addon-title">Request Hero Tertentu (A – Z)</div>
+                    <div class="addon-desc">Geser ke kanan/kiri atau cari hero favorit (maks. 3 hero)</div>
+                  </div>
+                </div>
+                <span class="status-pill-green">GRATIS</span>
+              </div>
+
+              <div class="role-filter-strip" id="heroRoleFilterStrip">
+                <button type="button" class="role-chip active" data-role="All" onclick="setHeroRoleFilter('All')">Semua (A–Z)</button>
+                <button type="button" class="role-chip" data-role="Jungler" onclick="setHeroRoleFilter('Jungler')">Jungler</button>
+                <button type="button" class="role-chip" data-role="Gold Lane" onclick="setHeroRoleFilter('Gold Lane')">Gold Lane</button>
+                <button type="button" class="role-chip" data-role="Mid Lane" onclick="setHeroRoleFilter('Mid Lane')">Mid Lane</button>
+                <button type="button" class="role-chip" data-role="EXP Lane" onclick="setHeroRoleFilter('EXP Lane')">EXP Lane</button>
+                <button type="button" class="role-chip" data-role="Roamer" onclick="setHeroRoleFilter('Roamer')">Roamer</button>
+              </div>
+
+              <div class="search-box">
+                <span class="search-icon-left">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.3"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </span>
+                <input type="text" id="inpHeroSearch" class="search-input" placeholder="Cari nama hero (A–Z), misal: Fanny, Hayabusa, Obsidia, Sora..." oninput="handleHeroSearch(this.value)" />
+                <button type="button" id="btnClearHeroSearch" class="search-clear-btn" onclick="clearHeroSearch()">✕</button>
+              </div>
+
+              <div class="selected-heroes-bar" id="selectedHeroesBar"></div>
+
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:11px;color:#94a3b8;font-weight:700;">
+                <span id="txtHeroCountInfo">Menampilkan 133 Hero (Urut A–Z)</span>
+                <span style="color:#22d3ee;">← Geser Horizontal →</span>
+              </div>
+
+              <div class="hero-horizontal-scroll" id="heroHorizontalList"></div>
+            </div>
+
+            <!-- 3B. Joki Prioritas / Fast Track (+30%) -->
+            <div class="addon-card">
+              <div class="addon-row">
+                <div class="addon-left">
+                  <div class="addon-icon-box" style="color:#22d3ee;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22d3ee" stroke-width="2.3"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                  </div>
+                  <div>
+                    <div class="addon-title">Joki Prioritas / Fast Track</div>
+                    <div class="addon-desc" id="txtPrioritySub">Antrean Normal • Aktifkan untuk 2x lebih cepat</div>
+                  </div>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <span class="price-tag-pill">+30%</span>
+                  <button type="button" id="togglePriority" class="toggle-switch" aria-label="Toggle Joki Prioritas" onclick="toggleAddon('priority')">
+                    <span class="toggle-knob"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3C. Live Stream Match (+20%) — Clean On/Off Toggle -->
+            <div class="addon-card" id="addonStreamBox">
+              <div class="addon-row">
+                <div class="addon-left">
+                  <div class="addon-icon-box" style="color:#c084fc;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="2.3"><rect x="2" y="7" width="20" height="15" rx="2"/><polyline points="17 2 12 7 7 2"/></svg>
+                  </div>
+                  <div>
+                    <div class="addon-title">Live Stream Match</div>
+                    <div class="addon-desc">Tonton langsung proses joki secara real-time</div>
+                  </div>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <span class="price-tag-pill">+20%</span>
+                  <button type="button" id="toggleLiveStream" class="toggle-switch" aria-label="Toggle Live Stream Match" onclick="toggleAddon('liveStream')">
+                    <span class="toggle-knob"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             RIGHT COLUMN: RECEIPT PANEL & COLLAPSIBLE BENGKELML SHIELD
+             =================================================================== -->
+        <div class="calc-right-col">
+          <div class="receipt-card">
+            <div class="step-header">
+              <span style="font-size:14px;font-weight:900;color:#ffffff;text-transform:uppercase;letter-spacing:0.04em;">Rincian Estimasi Paket</span>
+              <span class="status-pill-green" id="txtReceiptDiscountBadge">Diskon Volume Aktif</span>
+            </div>
+
+            <!-- Visual Emblem Route Preview -->
+            <div class="route-preview-box">
+              <div class="route-node">
+                <div id="svgRouteStart" style="width:34px;height:34px;"></div>
+                <div>
+                  <div style="font-size:10px;color:#94a3b8;font-weight:700;text-transform:uppercase;">Rank Awal</div>
+                  <div style="font-size:12.5px;font-weight:900;color:#fbbf24;" id="txtRouteStartLabel">Epic II (3★)</div>
+                </div>
+              </div>
+              <span style="font-weight:900;color:#22d3ee;font-size:16px;">→</span>
+              <div class="route-node" style="justify-content:flex-end;text-align:right;">
+                <div>
+                  <div style="font-size:10px;color:#94a3b8;font-weight:700;text-transform:uppercase;">Target</div>
+                  <div style="font-size:12.5px;font-weight:900;color:#22d3ee;" id="txtRouteTargetLabel">Honor (25★)</div>
+                </div>
+                <div id="svgRouteTarget" style="width:34px;height:34px;"></div>
+              </div>
+            </div>
+
+            <!-- Volume Discount Progress Bar -->
+            <div class="discount-box">
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:11px;gap:6px;">
+                <span style="color:#34d399;font-weight:900;" id="txtDiscountTitle">Diskon Volume: 5% AKTIF</span>
+                <span style="color:#cbd5e1;font-weight:700;" id="txtDiscountNextHint">Order ≥ Rp 300k diskon 10%</span>
+              </div>
+              <div class="discount-bar-bg">
+                <div class="discount-bar-fill" id="discountProgressFill"></div>
+              </div>
+            </div>
+
+            <div class="receipt-rows">
+              <div class="receipt-row">
+                <span class="receipt-label">Metode Layanan</span>
+                <span class="receipt-val" id="txtReceiptMode">Joki Reguler</span>
+              </div>
+              <div class="receipt-row">
+                <span class="receipt-label">Total Bintang / Win</span>
+                <span class="receipt-val" style="color:#22d3ee;" id="txtReceiptNetStars">32 Bintang</span>
+              </div>
+              <div class="receipt-row">
+                <span class="receipt-label">Tarif Rata-Rata / ★</span>
+                <span class="receipt-val" id="txtReceiptAvgRate">Rp 6.469 / ★</span>
+              </div>
+              <div class="receipt-row">
+                <span class="receipt-label">Add-Ons Aktif</span>
+                <span class="receipt-val" id="txtReceiptAddons">Hero: Hayabusa</span>
+              </div>
+              <div class="receipt-row">
+                <span class="receipt-label">Estimasi Waktu Selesai</span>
+                <span class="receipt-val" style="color:#fbbf24;" id="txtReceiptEta">± 1 – 2 Hari</span>
+              </div>
+              <div class="receipt-row" id="rowDiscountSaved">
+                <span class="receipt-label">Hemat Diskon Volume</span>
+                <span class="receipt-val" style="color:#34d399;" id="txtReceiptSaved">- Rp 10.350</span>
+              </div>
+            </div>
+
+            <!-- Payment Method Selector -->
+            <div>
+              <div style="font-size:11.5px;color:#cbd5e1;margin-bottom:6px;font-weight:800;">Pilih Metode Pembayaran:</div>
+              <div class="payment-strip" id="paymentMethodStrip">
+                <button type="button" class="pay-badge active" data-pay="QRIS" onclick="selectPaymentMethod('QRIS')">QRIS</button>
+                <button type="button" class="pay-badge" data-pay="DANA" onclick="selectPaymentMethod('DANA')">DANA</button>
+                <button type="button" class="pay-badge" data-pay="GoPay" onclick="selectPaymentMethod('GoPay')">GoPay</button>
+                <button type="button" class="pay-badge" data-pay="ShopeePay" onclick="selectPaymentMethod('ShopeePay')">ShopeePay</button>
+                <button type="button" class="pay-badge" data-pay="BCA" onclick="selectPaymentMethod('BCA')">BCA</button>
+                <button type="button" class="pay-badge" data-pay="Wise / SEA" onclick="selectPaymentMethod('Wise / SEA')">Wise / SEA</button>
+              </div>
+            </div>
+
+            <!-- Desktop Sticky Total & Action Buttons -->
+            <div class="desktop-cta-card">
+              <div style="display:flex;align-items:center;justify-content:space-between;">
+                <span style="font-size:12px;font-weight:900;color:#cbd5e1;text-transform:uppercase;">Total Estimasi Bayar</span>
+                <strong style="font-size:23px;font-weight:900;color:#fbbf24;" id="txtDesktopTotal">Rp 196.650</strong>
+              </div>
+              <button type="button" class="wa-cta-btn" style="width:100%;" onclick="openCheckoutModal()">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#041c13" stroke-width="2.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                <span>Order via WhatsApp (1-Klik)</span>
+              </button>
+              <button type="button" class="secondary-action-btn" style="width:100%;" onclick="copyOrderFormat()">
+                Salin Format Order
+              </button>
+            </div>
+          </div>
+
+          <!-- BENGKELML SHIELD (COLLAPSIBLE SHOW / HIDE) -->
+          <div class="section-card" id="sec-shield">
+            <div class="step-header">
+              <div class="step-title-wrap">
+                <span class="step-num" style="background-color:#0d2b22;border-color:#10b981;color:#34d399;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </span>
+                <h2 class="step-title">BENGKELML Shield</h2>
+              </div>
+              <button type="button" class="shield-toggle-btn" onclick="toggleShieldSection()">
+                <span id="txtShieldToggleLabel">Sembunyikan</span>
+                <svg id="iconShieldChevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.6">
+                  <polyline points="18 15 12 9 6 15"/>
+                </svg>
+              </button>
+            </div>
+
+            <div class="shield-body" id="shieldBodyContent">
+              <p style="font-size:12px;color:#cbd5e1;">Perlindungan keamanan akun dan kenyamanan kamu sebelum, selama, dan sesudah sesi boosting.</p>
+              <div class="shield-grid">
+                <div class="shield-item">
+                  <div style="font-size:12px;font-weight:900;color:#34d399;margin-bottom:3px;">1. Login &amp; V2L Aman</div>
+                  <div style="font-size:11px;color:#94a3b8;">Dipandu verifikasi sekali masuk dan wajib ganti sandi setelah selesai.</div>
+                </div>
+                <div class="shield-item">
+                  <div style="font-size:12px;font-weight:900;color:#22d3ee;margin-bottom:3px;">2. 100% Manual Skill</div>
+                  <div style="font-size:11px;color:#94a3b8;">Tanpa script, map hack, atau program ilegal pihak ketiga.</div>
+                </div>
+                <div class="shield-item">
+                  <div style="font-size:12px;font-weight:900;color:#fbbf24;margin-bottom:3px;">3. Diamond &amp; Skin Utuh</div>
+                  <div style="font-size:11px;color:#94a3b8;">Inventory, BP, serta diamond akun dijamin tidak disentuh.</div>
+                </div>
+                <div class="shield-item">
+                  <div style="font-size:12px;font-weight:900;color:#c084fc;margin-bottom:3px;">4. Garansi Ganti Win</div>
+                  <div style="font-size:11px;color:#94a3b8;">Paket Gendong kalah langsung diganti 1 win tambahan gratis.</div>
+                </div>
+              </div>
+              <div style="background-color:#0d0b1a;border:1.5px solid #29234f;border-radius:10px;padding:10px;font-size:11.5px;color:#cbd5e1;">
+                <strong style="color:#fbbf24;display:block;margin-bottom:4px;">Checklist Sebelum Order:</strong>
+                <div>• <strong style="color:#22d3ee;">Joki Reguler:</strong> Siapkan login Moonton/TikTok, jangan tabrak login saat sesi berjalan.</div>
+                <div>• <strong style="color:#fbbf24;">Joki Gendong:</strong> Tanpa perlu password! Cukup kirim User ID &amp; Server MLBB.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           PRICELIST TABLE (3 COLUMNS ONLY - NO HITUNG BUTTON) & SERVICES
+           ===================================================================== -->
+      <div class="info-two-col">
+        <div class="section-card" id="sec-pricelist">
+          <div class="step-header">
+            <h2 class="step-title">Daftar Harga Resmi S42</h2>
+            <span class="status-pill-cyan">Per Bintang (★)</span>
+          </div>
+          <p style="font-size:12px;color:#cbd5e1;">Tarif resmi per bintang untuk seluruh tier Mobile Legends Season 42.</p>
+
+          <table class="pricelist-table">
+            <thead>
+              <tr>
+                <th>Tier Rank</th>
+                <th style="text-align:right;">Joki Reguler (/★)</th>
+                <th style="text-align:right;">Joki Gendong (/★)</th>
+              </tr>
+            </thead>
+            <tbody id="pricelistTableBody"></tbody>
+          </table>
+
+          <div style="display:flex;flex-wrap:wrap;gap:6px;">
+            <span class="pay-badge" style="color:#34d399;border-color:#10b981;">≥ Rp 100k: Diskon 5%</span>
+            <span class="pay-badge" style="color:#34d399;border-color:#10b981;">≥ Rp 300k: Diskon 10%</span>
+            <span class="pay-badge" style="color:#34d399;border-color:#10b981;">≥ Rp 600k: Diskon 15%</span>
+            <span class="pay-badge" style="color:#fbbf24;border-color:#f59e0b;">≥ Rp 1 Jt: Diskon 20%</span>
+          </div>
+        </div>
+
+        <div class="section-card" id="sec-services">
+          <div class="step-header">
+            <h2 class="step-title">Layanan Kami</h2>
+            <span class="s42-badge" style="font-size:10px;">2 Metode</span>
+          </div>
+
+          <div class="addon-card" style="border-color:#22d3ee;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <strong style="font-size:14px;color:#ffffff;">1. Joki Rank Reguler</strong>
+              <span class="status-pill-cyan">Paling Laris</span>
+            </div>
+            <p style="font-size:12px;color:#cbd5e1;">Akun dimainkan langsung oleh booster profesional pilihan kami sampai rank target tercapai.</p>
+            <div style="font-size:12px;color:#f8fafc;display:flex;flex-direction:column;gap:4px;">
+              <div>✓ Gratis request hingga 3 hero meta favorit (A–Z)</div>
+              <div>✓ Opsi Live Stream Match &amp; Fast Track Prioritas</div>
+              <div>✓ Proteksi IP Indonesia &amp; bebas ban</div>
+            </div>
+            <button type="button" class="secondary-action-btn" style="border-color:#22d3ee;color:#22d3ee;" onclick="setServiceMode('reguler');scrollToSection('sec-calculator');">
+              Pilih Joki Reguler ↑
+            </button>
+          </div>
+
+          <div class="addon-card" style="border-color:#fbbf24;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <strong style="font-size:14px;color:#fbbf24;">2. Joki Gendong (Carry Mabar)</strong>
+              <span class="status-pill-green">Tanpa Login</span>
+            </div>
+            <p style="font-size:12px;color:#cbd5e1;">Main bareng booster di lobby party yang sama. Kamu tetap bermain sendiri tanpa serahkan akun.</p>
+            <div style="font-size:12px;color:#f8fafc;display:flex;flex-direction:column;gap:4px;">
+              <div>✓ 100% Tanpa Password / Data Login Akun</div>
+              <div>✓ Pilihan paket Per-Rank atau Per-Win (1 / 3 / 5 Win)</div>
+              <div>✓ Garansi kalah langsung diganti 1 win gratis</div>
+            </div>
+            <button type="button" class="primary-action-btn" onclick="setServiceMode('gendong');scrollToSection('sec-calculator');">
+              Pilih Joki Gendong ↑
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           CARA ORDER (4 LANGKAH)
+           ===================================================================== -->
+      <div class="section-card" id="sec-howto">
+        <div class="step-header">
+          <h2 class="step-title">Cara Order (4 Langkah Mudah)</h2>
+          <span class="status-pill-green">Proses ± 5 Menit</span>
+        </div>
+        <div class="steps-grid">
+          <div class="shield-item">
+            <div style="font-size:11px;font-weight:900;color:#fbbf24;margin-bottom:3px;">01 • HITUNG HARGA</div>
+            <div style="font-size:13px;font-weight:900;color:#ffffff;margin-bottom:3px;">Pilih Rank &amp; Add-On</div>
+            <div style="font-size:11.5px;color:#94a3b8;">Atur rank awal, rank tujuan, dan request hero di kalkulator.</div>
+          </div>
+          <div class="shield-item">
+            <div style="font-size:11px;font-weight:900;color:#22d3ee;margin-bottom:3px;">02 • CHAT WHATSAPP</div>
+            <div style="font-size:13px;font-weight:900;color:#ffffff;margin-bottom:3px;">Kirim Format Otomatis</div>
+            <div style="font-size:11.5px;color:#94a3b8;">Klik Order via WhatsApp dan selesaikan pembayaran via QRIS/Bank.</div>
+          </div>
+          <div class="shield-item">
+            <div style="font-size:11px;font-weight:900;color:#34d399;margin-bottom:3px;">03 • PROSES JOKI</div>
+            <div style="font-size:13px;font-weight:900;color:#ffffff;margin-bottom:3px;">Booster Mulai Push</div>
+            <div style="font-size:11.5px;color:#94a3b8;">Pro player langsung mengerjakan pesanan dengan winstreak tinggi.</div>
+          </div>
+          <div class="shield-item">
+            <div style="font-size:11px;font-weight:900;color:#c084fc;margin-bottom:3px;">04 • SELESAI &amp; AMAN</div>
+            <div style="font-size:13px;font-weight:900;color:#ffffff;margin-bottom:3px;">Cek Rank &amp; Ganti Sandi</div>
+            <div style="font-size:11.5px;color:#94a3b8;">Admin kirim bukti screenshot rank tercapai, akun siap dimainkan.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           KEUNGGULAN BENGKELML (6 CARDS)
+           ===================================================================== -->
+      <div class="section-card">
+        <div class="step-header">
+          <h2 class="step-title">Kenapa Pilih BENGKELML?</h2>
+          <span class="s42-badge" style="font-size:10px;">6 Jaminan</span>
+        </div>
+        <div class="feature-2col-grid">
+          <div class="shield-item">
+            <div style="font-size:12.5px;font-weight:900;color:#fbbf24;margin-bottom:3px;">Estimasi Waktu Jelas</div>
+            <div style="font-size:11.5px;color:#94a3b8;">Target pengerjaan transparan sejak awal pemesanan.</div>
+          </div>
+          <div class="shield-item">
+            <div style="font-size:12.5px;font-weight:900;color:#34d399;margin-bottom:3px;">100% Manual No-Cheat</div>
+            <div style="font-size:11.5px;color:#94a3b8;">Murni mekanik &amp; makro ex-pro player tanpa cheat.</div>
+          </div>
+          <div class="shield-item">
+            <div style="font-size:12.5px;font-weight:900;color:#22d3ee;margin-bottom:3px;">Admin Fast Response 24/7</div>
+            <div style="font-size:11.5px;color:#94a3b8;">Siap melayani order &amp; konsultasi kapan saja.</div>
+          </div>
+          <div class="shield-item">
+            <div style="font-size:12.5px;font-weight:900;color:#c084fc;margin-bottom:3px;">Booster Mythic Immortal</div>
+            <div style="font-size:11.5px;color:#94a3b8;">Seluruh booster terverifikasi minimal 100★+ Immortal.</div>
+          </div>
+          <div class="shield-item">
+            <div style="font-size:12.5px;font-weight:900;color:#fbbf24;margin-bottom:3px;">Diskon Volume Otomatis</div>
+            <div style="font-size:11.5px;color:#94a3b8;">Semakin banyak bintang diorder, diskon hingga 20%.</div>
+          </div>
+          <div class="shield-item">
+            <div style="font-size:12.5px;font-weight:900;color:#34d399;margin-bottom:3px;">Garansi Target Tercapai</div>
+            <div style="font-size:11.5px;color:#94a3b8;">Kalah saat paket Gendong langsung diganti 1 win gratis.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           TESTIMONI & BUKTI ORDER (WITH MODAL)
+           ===================================================================== -->
+      <div class="section-card" id="sec-testi">
+        <div class="step-header">
+          <h2 class="step-title">Testimoni &amp; Bukti Order</h2>
+          <span class="status-pill-green">★ 5.0 Verified</span>
+        </div>
+        <div class="testi-grid-wrap">
+          <div class="testi-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <div>
+                <strong style="font-size:13.5px;color:#ffffff;">Rizky 'HyperIndo'</strong>
+                <div style="font-size:11.5px;color:#22d3ee;font-weight:700;">Epic II (3★) → Mythic Honor (25★) • Joki Reguler</div>
+              </div>
+              <span class="s42-badge" style="font-size:10px;">14x Winstreak</span>
+            </div>
+            <p style="font-size:12px;color:#cbd5e1;">"Request Hayabusa &amp; Obsidia beneran di-carry habis-habisan, WR naik dari 54% jadi 71%. Sehari kelar!"</p>
+            <button type="button" class="secondary-action-btn" style="height:34px;font-size:11.5px;" onclick="openProofModal(0)">
+              Lihat Bukti Match &amp; Chat
+            </button>
+          </div>
+          <div class="testi-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <div>
+                <strong style="font-size:13.5px;color:#ffffff;">Naufal 'Sultanz'</strong>
+                <div style="font-size:11.5px;color:#fbbf24;font-weight:700;">Legend I (2★) → Mythic (15★) • Joki Gendong</div>
+              </div>
+              <span class="status-pill-green">Tanpa Login</span>
+            </div>
+            <p style="font-size:12px;color:#cbd5e1;">"Mabar gendong sama trio core-nya enak banget, rotasi rapi dan ramah di voice. Ga perlu kasih akun sama sekali."</p>
+            <button type="button" class="secondary-action-btn" style="height:34px;font-size:11.5px;" onclick="openProofModal(1)">
+              Lihat Bukti Match &amp; Chat
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           METODE PEMBAYARAN & FAQ ACCORDION
+           ===================================================================== -->
+      <div class="info-two-col">
+        <div class="section-card">
+          <div class="step-header">
+            <h2 class="step-title">Metode Pembayaran</h2>
+            <span class="status-pill-cyan">ID • MY • SG</span>
+          </div>
+          <p style="font-size:12px;color:#cbd5e1;">Pembayaran diproses setelah detail order dikonfirmasi dengan admin WhatsApp.</p>
+          <div class="payment-strip">
+            <span class="pay-badge" style="border-color:#22d3ee;color:#22d3ee;">QRIS Instan</span>
+            <span class="pay-badge">DANA</span>
+            <span class="pay-badge">GoPay</span>
+            <span class="pay-badge">OVO</span>
+            <span class="pay-badge">ShopeePay</span>
+            <span class="pay-badge">BCA</span>
+            <span class="pay-badge">Mandiri</span>
+            <span class="pay-badge">Wise</span>
+            <span class="pay-badge">Touch 'n Go (MY)</span>
+            <span class="pay-badge">PayNow (SG)</span>
+          </div>
+        </div>
+
+        <div class="section-card" id="sec-faq">
+          <div class="step-header">
+            <h2 class="step-title">Pertanyaan Umum (FAQ)</h2>
+          </div>
+          <div id="faqAccordionList" style="display:flex;flex-direction:column;gap:8px;"></div>
+        </div>
+      </div>
+
+      <!-- =====================================================================
+           BOTTOM BAR SHOW / HIDE TOOLS GRATIS MLBB (NO BOTTOM NAVBAR)
+           ===================================================================== -->
+      <div class="bottom-tools-trigger-bar" id="sec-tools-trigger">
+        <div>
+          <div style="font-size:11px;font-weight:900;color:#22d3ee;text-transform:uppercase;letter-spacing:0.06em;">Utilitas Gratis Player MLBB</div>
+          <div style="font-size:14px;font-weight:900;color:#ffffff;">Kalkulator Winrate (WR), Reset Season S42 &amp; Kamus MLBB</div>
+        </div>
+        <button type="button" id="btnBottomToolsToggle" class="tools-toggle-pill" onclick="toggleToolsPanel(false)">
+          <span id="txtBottomToolsLabel">Tampilkan Tools Gratis</span>
+          <svg id="iconBottomToolsChevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+      </div>
+
+      <!-- COLLAPSIBLE TOOLS GRATIS PANEL -->
+      <section id="toolsDrawerSection" class="tools-drawer-section">
+        <div class="step-header">
+          <div class="step-title-wrap">
+            <span class="step-num" style="border-color:#22d3ee;color:#22d3ee;">★</span>
+            <h2 class="step-title">Tools Gratis BENGKELML</h2>
+          </div>
+          <button type="button" class="shield-toggle-btn" style="border-color:#22d3ee;color:#22d3ee;background-color:#0e2536;" onclick="toggleToolsPanel(false)">
+            Tutup Tools ✕
+          </button>
+        </div>
+
+        <div class="info-two-col">
+          <!-- 1. Kalkulator Winrate -->
+          <div class="addon-card" style="border-color:#22d3ee;">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <strong style="font-size:13.5px;color:#ffffff;">1. Kalkulator Winrate (WR) MLBB</strong>
+              <span class="status-pill-green">Akurat</span>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+              <div>
+                <label style="font-size:10.5px;color:#94a3b8;font-weight:700;display:block;margin-bottom:4px;">Total Match</label>
+                <input type="number" id="wrTotalMatch" class="field-input" value="250" min="1" oninput="calculateWinrateTool()" />
+              </div>
+              <div>
+                <label style="font-size:10.5px;color:#94a3b8;font-weight:700;display:block;margin-bottom:4px;">WR Saat Ini (%)</label>
+                <input type="number" id="wrCurrentPct" class="field-input" value="52.4" step="0.1" min="0" max="99.9" oninput="calculateWinrateTool()" />
+              </div>
+              <div>
+                <label style="font-size:10.5px;color:#94a3b8;font-weight:700;display:block;margin-bottom:4px;">Target WR (%)</label>
+                <input type="number" id="wrTargetPct" class="field-input" value="60" step="0.5" min="1" max="99.9" oninput="calculateWinrateTool()" />
+              </div>
+            </div>
+            <div id="wrToolResultBox" style="background-color:#090812;border:1.5px solid #22d3ee;border-radius:10px;padding:11px;font-size:12.5px;"></div>
+          </div>
+
+          <!-- 2. Simulasi Reset Season S42 -->
+          <div class="addon-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <strong style="font-size:13.5px;color:#ffffff;">2. Simulasi Reset Season S42 → S43</strong>
+              <span class="status-pill-cyan">Auto Drop</span>
+            </div>
+            <p style="font-size:11.5px;color:#cbd5e1;">Cek posisi rank awal kamu setelah Reset Season S42:</p>
+            <select id="selSeasonResetRank" class="field-input" onchange="calculateSeasonReset()" style="background-color:#090812;font-weight:800;">
+              <option value="epic">Epic V – I → Turun ke Grandmaster II / I</option>
+              <option value="legend">Legend V – I → Turun ke Epic IV / III</option>
+              <option value="mythic">Mythic (0★ – 24★) → Turun ke Epic II</option>
+              <option value="honor" selected>Mythic Honor (25★ – 49★) → Turun ke Epic I</option>
+              <option value="glory">Mythic Glory (50★ – 99★) → Turun ke Legend V</option>
+              <option value="immortal">Mythic Immortal (100★+) → Turun ke Legend V (Bonus Protection)</option>
+            </select>
+            <div id="seasonResetResultBox" style="background-color:#090812;border:1.5px solid #2c2754;border-radius:10px;padding:11px;font-size:12px;color:#f8fafc;font-weight:600;"></div>
+          </div>
+        </div>
+
+        <!-- 3. Kamus Istilah MLBB -->
+        <div class="addon-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <strong style="font-size:13.5px;color:#ffffff;">3. Kamus Istilah MLBB</strong>
+            <span class="s42-badge" style="font-size:10px;">Glosarium</span>
+          </div>
+          <div class="search-box">
+            <span class="search-icon-left">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.3"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </span>
+            <input type="text" id="inpGlossarySearch" class="search-input" placeholder="Cari istilah: Snowball, Freeze Lane, Zoning, Lord Dance..." oninput="renderGlossaryList(this.value)" />
+          </div>
+          <div id="glossaryListContainer" class="feature-2col-grid"></div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           FOOTER LENGKAP
+           ===================================================================== -->
+      <footer class="section-card" style="background-color:#0c0a17;">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+          <div>
+            <div class="brand-title">BENGKEL<span>ML</span></div>
+            <div style="font-size:12px;color:#94a3b8;margin-top:2px;">Jasa Joki &amp; Gendong Mobile Legends: Bang Bang Season 42 Terpercaya.</div>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:7px;">
+            <button type="button" class="secondary-action-btn" style="height:34px;font-size:11.5px;" onclick="toggleToolsPanel(true)">Tools Gratis</button>
+            <button type="button" class="secondary-action-btn" style="height:34px;font-size:11.5px;" onclick="openLegalModal('terms')">Syarat &amp; Ketentuan</button>
+            <button type="button" class="secondary-action-btn" style="height:34px;font-size:11.5px;" onclick="openLegalModal('privacy')">Kebijakan Privasi</button>
+          </div>
+        </div>
+        <div style="border-top:1.5px solid #231f45;padding-top:10px;font-size:11.5px;color:#94a3b8;">
+          <div>WhatsApp Admin: <strong style="color:#fbbf24;">+62 895-3911-87744</strong> • Instagram &amp; TikTok: <strong style="color:#22d3ee;">@bengkelml.id</strong></div>
+          <div style="margin-top:3px;">© 2026 BENGKELML Esports Boosting. Bukan bagian resmi dari Moonton.</div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- =======================================================================
+         MOBILE-ONLY FLOATING BOTTOM CHECKOUT DOCK (NO NAVBAR)
+         ======================================================================= -->
+    <div id="mobileCheckoutDock" class="mobile-checkout-dock">
+      <div class="dock-inner">
+        <div>
+          <div style="font-size:10px;font-weight:900;color:#94a3b8;text-transform:uppercase;">Total Estimasi</div>
+          <div style="font-size:19px;font-weight:900;color:#fbbf24;line-height:1.15;" id="txtDockTotal">Rp 196.650</div>
+          <div style="font-size:10.5px;color:#22d3ee;font-weight:700;" id="txtDockSubtitle">Epic II (3★) → Honor (25★)</div>
+        </div>
+        <button type="button" class="wa-cta-btn" onclick="openCheckoutModal()">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#041c13" stroke-width="2.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <span>Order WhatsApp</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         WHATSAPP ORDER CONFIRMATION MODAL
+         ======================================================================= -->
+    <div id="checkoutModal" class="overlay-backdrop" onclick="if(event.target===this) closeCheckoutModal()">
+      <div class="modal-sheet">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <h3 style="font-size:16px;font-weight:900;color:#fbbf24;text-transform:uppercase;">Konfirmasi Order BENGKELML</h3>
+          <button type="button" class="icon-btn" style="width:34px;height:34px;" onclick="closeCheckoutModal()">✕</button>
+        </div>
+        <div id="modalSummaryContent" class="receipt-rows" style="background-color:#090812;padding:12px;border-radius:11px;border:1.5px solid #2c2754;"></div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <button type="button" class="wa-cta-btn" style="width:100%;" onclick="confirmAndOpenWhatsApp()">
+            Kirim ke WhatsApp Admin
+          </button>
+          <button type="button" class="secondary-action-btn" style="width:100%;" onclick="copyOrderFormat()">
+            Salin Format Order
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         TESTIMONIAL PROOF MODAL
+         ======================================================================= -->
+    <div id="proofModal" class="overlay-backdrop" onclick="if(event.target===this) closeProofModal()">
+      <div class="modal-sheet">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <h3 style="font-size:15px;font-weight:900;color:#fbbf24;" id="proofModalTitle">Bukti Order</h3>
+          <button type="button" class="icon-btn" style="width:34px;height:34px;" onclick="closeProofModal()">✕</button>
+        </div>
+        <div id="proofModalBody" style="display:flex;flex-direction:column;gap:10px;"></div>
+        <button type="button" class="primary-action-btn" style="width:100%;" onclick="closeProofModal()">Tutup</button>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         LEGAL READER MODAL
+         ======================================================================= -->
+    <div id="readerModal" class="overlay-backdrop" onclick="if(event.target===this) closeReaderModal()">
+      <div class="modal-sheet">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <h3 style="font-size:15px;font-weight:900;color:#22d3ee;" id="readerModalTitle">Detail</h3>
+          <button type="button" class="icon-btn" style="width:34px;height:34px;" onclick="closeReaderModal()">✕</button>
+        </div>
+        <div id="readerModalBody" style="font-size:12.5px;color:#cbd5e1;line-height:1.6;display:flex;flex-direction:column;gap:8px;"></div>
+        <button type="button" class="primary-action-btn" style="width:100%;" onclick="closeReaderModal()">Tutup</button>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         MOBILE SLIDE-OVER DRAWER MENU
+         ======================================================================= -->
+    <div id="drawerBackdrop" class="drawer-backdrop" onclick="toggleDrawer(false)"></div>
+    <aside id="drawerPanel" class="drawer-panel">
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div class="brand-title">BENGKEL<span>ML</span></div>
+        <button type="button" class="icon-btn" style="width:34px;height:34px;" onclick="toggleDrawer(false)">✕</button>
+      </div>
+      <p style="font-size:12px;color:#94a3b8;">Jasa Joki &amp; Gendong Mobile Legends Season 42 terpercaya.</p>
+      <div style="display:flex;flex-direction:column;gap:7px;">
+        <button type="button" class="secondary-action-btn" style="justify-content:flex-start;" onclick="toggleDrawer(false);scrollToSection('sec-pricelist');">Harga</button>
+        <button type="button" class="secondary-action-btn" style="justify-content:flex-start;border-color:#fbbf24;color:#fbbf24;" onclick="toggleDrawer(false);setServiceMode('reguler');scrollToSection('sec-calculator');">Joki Reguler</button>
+        <button type="button" class="secondary-action-btn" style="justify-content:flex-start;border-color:#fbbf24;color:#fbbf24;" onclick="toggleDrawer(false);setServiceMode('gendong');scrollToSection('sec-calculator');">Joki Gendong</button>
+        <button type="button" class="secondary-action-btn" style="justify-content:flex-start;" onclick="toggleDrawer(false);scrollToSection('sec-faq');">FAQ</button>
+        <button type="button" class="secondary-action-btn" style="justify-content:flex-start;border-color:#22d3ee;color:#22d3ee;" onclick="toggleDrawer(false);toggleToolsPanel(true);">Tools Gratis &amp; Kamus MLBB</button>
+        <button type="button" class="secondary-action-btn" style="justify-content:flex-start;" onclick="toggleDrawer(false);openLegalModal('terms');">Syarat &amp; Ketentuan</button>
+      </div>
+      <button type="button" class="currency-btn drawer-currency" onclick="cycleCurrency()" title="Ganti Mata Uang">
+        <span data-currency-code>IDR</span>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        Ganti mata uang
+      </button>
+      <div style="margin-top:auto;padding:11px;border-radius:10px;background-color:#121024;border:1.5px solid #2c2754;font-size:11px;color:#94a3b8;">
+        WhatsApp Admin 24/7: <strong style="color:#fbbf24;">+62 895-3911-87744</strong>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    // =========================================================================
+    // 1. AUTHENTIC MLBB RANK DATA & OFFICIAL S42 RATES
+    // =========================================================================
+    const RANK_TIERS = [
+      { key: 'master',   name: 'Master',   shortName: 'Master',   regRate: 2000,  genRate: 3000,  hasDiv: true,  divs: ['IV', 'III', 'II', 'I'],       maxDivStars: 4, minStar: 0,   maxStar: 4,   rangeLabel: 'Divisi IV – I (4★)' },
+      { key: 'gm',       name: 'GM',       shortName: 'GM',       regRate: 2500,  genRate: 3500,  hasDiv: true,  divs: ['V', 'IV', 'III', 'II', 'I'],  maxDivStars: 5, minStar: 0,   maxStar: 5,   rangeLabel: 'Divisi V – I (5★)' },
+      { key: 'epic',     name: 'Epic',     shortName: 'Epic',     regRate: 3000,  genRate: 5000,  hasDiv: true,  divs: ['V', 'IV', 'III', 'II', 'I'],  maxDivStars: 5, minStar: 0,   maxStar: 5,   rangeLabel: 'Divisi V – I (5★)' },
+      { key: 'legend',   name: 'Legend',   shortName: 'Legend',   regRate: 4000,  genRate: 6000,  hasDiv: true,  divs: ['V', 'IV', 'III', 'II', 'I'],  maxDivStars: 5, minStar: 0,   maxStar: 5,   rangeLabel: 'Divisi V – I (5★)' },
+      { key: 'mythic',   name: 'Mythic',   shortName: 'Mythic',   regRate: 6000,  genRate: 8000,  hasDiv: false, divs: [],                             maxDivStars: 0, minStar: 0,   maxStar: 24,  rangeLabel: '0★ – 24★' },
+      { key: 'honor',    name: 'Honor',    shortName: 'Honor',    regRate: 7000,  genRate: 9000,  hasDiv: false, divs: [],                             maxDivStars: 0, minStar: 25,  maxStar: 49,  rangeLabel: '25★ – 49★' },
+      { key: 'glory',    name: 'Glory',    shortName: 'Glory',    regRate: 9000,  genRate: 12000, hasDiv: false, divs: [],                             maxDivStars: 0, minStar: 50,  maxStar: 99,  rangeLabel: '50★ – 99★' },
+      { key: 'immortal', name: 'Immortal', shortName: 'Immortal', regRate: 13000, genRate: 15000, hasDiv: false, divs: [],                             maxDivStars: 0, minStar: 100, maxStar: 999, rangeLabel: '100★ – 999★' }
+    ];
+
+    const CURRENCY_CONFIG = {
+      IDR: { symbol: 'Rp ', rate: 1, decimals: 0 },
+      MYR: { symbol: 'RM ', rate: 0.00028, decimals: 2 },
+      SGD: { symbol: 'S$ ', rate: 0.000085, decimals: 2 }
+    };
+
+    // Complete 133 MLBB Heroes Roster (through late 2026), sorted strictly A-Z
+    const MLBB_HEROES_RAW = [
+      { name: 'Aamon', roles: ['Jungler'] },
+      { name: 'Akai', roles: ['Roamer', 'Jungler'] },
+      { name: 'Aldous', roles: ['EXP Lane'] },
+      { name: 'Alice', roles: ['Mid Lane', 'EXP Lane'] },
+      { name: 'Alpha', roles: ['Jungler', 'EXP Lane'] },
+      { name: 'Alucard', roles: ['Jungler', 'EXP Lane'] },
+      { name: 'Angela', roles: ['Roamer'] },
+      { name: 'Argus', roles: ['EXP Lane'] },
+      { name: 'Arlott', roles: ['EXP Lane', 'Roamer'] },
+      { name: 'Atlas', roles: ['Roamer'] },
+      { name: 'Aulus', roles: ['Jungler', 'EXP Lane'] },
+      { name: 'Aurora', roles: ['Mid Lane'] },
+      { name: 'Badang', roles: ['EXP Lane', 'Roamer'] },
+      { name: 'Balmond', roles: ['Jungler', 'EXP Lane'] },
+      { name: 'Bane', roles: ['Jungler', 'EXP Lane'] },
+      { name: 'Barats', roles: ['Jungler', 'EXP Lane'] },
+      { name: 'Baxia', roles: ['Jungler', 'Roamer'] },
+      { name: 'Beatrix', roles: ['Gold Lane'] },
+      { name: 'Belerick', roles: ['Roamer', 'EXP Lane'] },
+      { name: 'Benedetta', roles: ['EXP Lane', 'Jungler'] },
+      { name: 'Brody', roles: ['Gold Lane'] },
+      { name: 'Bruno', roles: ['Gold Lane'] },
+      { name: 'Carmilla', roles: ['Roamer'] },
+      { name: 'Cecilion', roles: ['Mid Lane'] },
+      { name: 'Chang\'e', roles: ['Mid Lane'] },
+      { name: 'Chip', roles: ['Roamer'] },
+      { name: 'Chou', roles: ['EXP Lane', 'Roamer'] },
+      { name: 'Cici', roles: ['EXP Lane'] },
+      { name: 'Claude', roles: ['Gold Lane'] },
+      { name: 'Clint', roles: ['Gold Lane'] },
+      { name: 'Cyclops', roles: ['Mid Lane', 'Jungler'] },
+      { name: 'Diggie', roles: ['Roamer'] },
+      { name: 'Dyrroth', roles: ['EXP Lane', 'Jungler'] },
+      { name: 'Edith', roles: ['Roamer', 'EXP Lane'] },
+      { name: 'Esmeralda', roles: ['EXP Lane', 'Mid Lane'] },
+      { name: 'Estes', roles: ['Roamer'] },
+      { name: 'Eudora', roles: ['Mid Lane'] },
+      { name: 'Fanny', roles: ['Jungler'] },
+      { name: 'Faramis', roles: ['Mid Lane', 'Roamer'] },
+      { name: 'Floryn', roles: ['Roamer'] },
+      { name: 'Franco', roles: ['Roamer'] },
+      { name: 'Fredrinn', roles: ['Jungler', 'EXP Lane'] },
+      { name: 'Freya', roles: ['EXP Lane', 'Jungler'] },
+      { name: 'Gatotkaca', roles: ['Roamer', 'EXP Lane'] },
+      { name: 'Gloo', roles: ['EXP Lane', 'Roamer'] },
+      { name: 'Gord', roles: ['Mid Lane'] },
+      { name: 'Granger', roles: ['Gold Lane', 'Jungler'] },
+      { name: 'Grock', roles: ['Roamer', 'EXP Lane'] },
+      { name: 'Guinevere', roles: ['EXP Lane', 'Jungler'] },
+      { name: 'Gusion', roles: ['Jungler', 'Mid Lane'] },
+      { name: 'Hanabi', roles: ['Gold Lane'] },
+      { name: 'Hanzo', roles: ['Jungler'] },
+      { name: 'Harith', roles: ['Gold Lane', 'Mid Lane'] },
+      { name: 'Harley', roles: ['Jungler', 'Mid Lane'] },
+      { name: 'Hayabusa', roles: ['Jungler'] },
+      { name: 'Helcurt', roles: ['Jungler', 'Roamer'] },
+      { name: 'Hilda', roles: ['Roamer', 'EXP Lane'] },
+      { name: 'Hirara', roles: ['Mid Lane', 'Roamer'] },
+      { name: 'Hylos', roles: ['Roamer', 'EXP Lane'] },
+      { name: 'Irithel', roles: ['Gold Lane'] },
+      { name: 'Ixia', roles: ['Gold Lane'] },
+      { name: 'Jawhead', roles: ['Roamer', 'EXP Lane'] },
+      { name: 'Johnson', roles: ['Roamer'] },
+      { name: 'Joy', roles: ['Jungler', 'EXP Lane'] },
+      { name: 'Julian', roles: ['Jungler', 'Mid Lane'] },
+      { name: 'Kadita', roles: ['Mid Lane', 'Roamer'] },
+      { name: 'Kagura', roles: ['Mid Lane'] },
+      { name: 'Kaja', roles: ['Roamer', 'EXP Lane'] },
+      { name: 'Kalea', roles: ['Roamer', 'EXP Lane'] },
+      { name: 'Karina', roles: ['Jungler'] },
+      { name: 'Karrie', roles: ['Gold Lane'] },
+      { name: 'Keryn', roles: ['Gold Lane', 'Jungler'] },
+      { name: 'Khaleed', roles: ['EXP Lane', 'Roamer'] },
+      { name: 'Khufra', roles: ['Roamer'] },
+      { name: 'Kimmy', roles: ['Gold Lane', 'Mid Lane'] },
+      { name: 'Lancelot', roles: ['Jungler'] },
+      { name: 'Lapu-Lapu', roles: ['EXP Lane'] },
+      { name: 'Layla', roles: ['Gold Lane'] },
+      { name: 'Leomord', roles: ['Jungler', 'EXP Lane'] },
+      { name: 'Lesley', roles: ['Gold Lane'] },
+      { name: 'Ling', roles: ['Jungler'] },
+      { name: 'Lolita', roles: ['Roamer'] },
+      { name: 'Lukas', roles: ['EXP Lane', 'Jungler'] },
+      { name: 'Lunox', roles: ['Mid Lane', 'Gold Lane'] },
+      { name: 'Luo Yi', roles: ['Mid Lane'] },
+      { name: 'Lylia', roles: ['Mid Lane'] },
+      { name: 'Marcel', roles: ['Roamer', 'Mid Lane'] },
+      { name: 'Martis', roles: ['Jungler', 'EXP Lane'] },
+      { name: 'Masha', roles: ['EXP Lane', 'Roamer'] },
+      { name: 'Mathilda', roles: ['Roamer', 'Mid Lane'] },
+      { name: 'Melissa', roles: ['Gold Lane'] },
+      { name: 'Minotaur', roles: ['Roamer'] },
+      { name: 'Minsitthar', roles: ['EXP Lane', 'Roamer'] },
+      { name: 'Miya', roles: ['Gold Lane'] },
+      { name: 'Moskov', roles: ['Gold Lane'] },
+      { name: 'Nana', roles: ['Mid Lane', 'Roamer'] },
+      { name: 'Natalia', roles: ['Roamer', 'Jungler'] },
+      { name: 'Natan', roles: ['Gold Lane', 'Jungler'] },
+      { name: 'Nolan', roles: ['Jungler'] },
+      { name: 'Novaria', roles: ['Mid Lane', 'Roamer'] },
+      { name: 'Obsidia', roles: ['Gold Lane'] },
+      { name: 'Odette', roles: ['Mid Lane'] },
+      { name: 'Paquito', roles: ['EXP Lane', 'Jungler'] },
+      { name: 'Pharsa', roles: ['Mid Lane'] },
+      { name: 'Phoveus', roles: ['EXP Lane'] },
+      { name: 'Popol and Kupa', roles: ['Gold Lane', 'Jungler'] },
+      { name: 'Rafaela', roles: ['Roamer'] },
+      { name: 'Roger', roles: ['Jungler', 'Gold Lane'] },
+      { name: 'Ruby', roles: ['EXP Lane', 'Roamer'] },
+      { name: 'Saber', roles: ['Jungler', 'Roamer'] },
+      { name: 'Selena', roles: ['Roamer', 'Mid Lane'] },
+      { name: 'Silvanna', roles: ['EXP Lane', 'Roamer'] },
+      { name: 'Sora', roles: ['EXP Lane', 'Jungler'] },
+      { name: 'Sun', roles: ['EXP Lane', 'Jungler'] },
+      { name: 'Suyou', roles: ['Jungler', 'EXP Lane'] },
+      { name: 'Terizla', roles: ['EXP Lane'] },
+      { name: 'Thamuz', roles: ['EXP Lane', 'Jungler'] },
+      { name: 'Tigreal', roles: ['Roamer'] },
+      { name: 'Uranus', roles: ['EXP Lane'] },
+      { name: 'Vale', roles: ['Mid Lane'] },
+      { name: 'Valentina', roles: ['Mid Lane'] },
+      { name: 'Valir', roles: ['Mid Lane', 'Roamer'] },
+      { name: 'Vexana', roles: ['Mid Lane'] },
+      { name: 'Wanwan', roles: ['Gold Lane'] },
+      { name: 'Wu Zetian', roles: ['Mid Lane'] },
+      { name: 'Xavier', roles: ['Mid Lane'] },
+      { name: 'X.Borg', roles: ['EXP Lane', 'Jungler'] },
+      { name: 'Yin', roles: ['Jungler', 'EXP Lane'] },
+      { name: 'Yi Sun-shin', roles: ['Jungler'] },
+      { name: 'Yu Zhong', roles: ['EXP Lane'] },
+      { name: 'Yve', roles: ['Mid Lane'] },
+      { name: 'Zhask', roles: ['Mid Lane'] },
+      { name: 'Zhuxin', roles: ['Mid Lane'] },
+      { name: 'Zilong', roles: ['EXP Lane', 'Jungler'] }
+    ].sort((a, b) => a.name.localeCompare(b.name));
+
+    const PROOF_ITEMS = [
+      {
+        title: "Bukti Order #BML-8812 — Epic II ke Mythic Honor",
+        customer: "Rizky 'HyperIndo'",
+        route: "Epic II (3★) → Mythic Honor (25★)",
+        mode: "Joki Reguler + Request Hero (Hayabusa, Obsidia)",
+        stats: "22 Win • 1 Lose • MVP 15x • KDA Rata-rata 11.4 / 1.8 / 7.2",
+        duration: "Selesai dalam 19 Jam",
+        quote: "Akun aman 100%, diamond utuh, langsung dapat efek spawn Mythic Honor S42!"
+      },
+      {
+        title: "Bukti Order #BML-8845 — Legend I ke Mythic 15★",
+        customer: "Naufal 'Sultanz'",
+        route: "Legend I (2★) → Mythic (15★)",
+        mode: "Joki Gendong (Mabar Party Tanpa Login)",
+        stats: "18 Win • 0 Lose • Full Trio Carry Booster Immortal 140★",
+        duration: "Selesai dalam 2 Sesi Mabar",
+        quote: "Tidak perlu kasih email/password sama sekali, tinggal masuk lobby langsung winstreak!"
+      }
+    ];
+
+    const FAQ_DATA = [
+      { q: "Apakah akun saya aman saat Joki Reguler?", a: "100% aman. Booster kami bermain manual menggunakan IP lokal Indonesia dan tidak pernah menyentuh pengaturan keamanan atau diamond akun kamu." },
+      { q: "Bagaimana cara kerja verifikasi 2 langkah (V2L) Moonton?", a: "Admin akan menghubungi kamu saat booster login pertama kali untuk meminta kode verifikasi sekali masuk. Setelah selesai, kamu wajib mengganti password." },
+      { q: "Apa bedanya Joki Reguler dan Joki Gendong?", a: "Joki Reguler dimainkan langsung oleh booster di akunmu. Joki Gendong adalah mabar party bersama booster tanpa perlu memberikan data login akun." },
+      { q: "Bagaimana jika kalah saat paket Joki Gendong?", a: "Setiap kekalahan pada paket Gendong (Per-Rank maupun Per-Win) langsung diganti 1 win tambahan gratis hingga target tercapai." },
+      { q: "Bagaimana cara klaim diskon volume hingga 20%?", a: "Diskon volume otomatis terhitung di kalkulator: ≥ Rp 100k (5%), ≥ Rp 300k (10%), ≥ Rp 600k (15%), dan ≥ Rp 1 Jt (20%)." }
+    ];
+
+    const GLOSSARY_TERMS = [
+      { term: "Snowball", desc: "Kondisi tim yang unggul gold dan level sejak early game sehingga terus menekan objektif tanpa memberi ruang comeback." },
+      { term: "Freeze Lane", desc: "Menahan gelombang minion di dekat turret sendiri agar exp laner atau gold laner lawan kehilangan gold & EXP." },
+      { term: "Zoning", desc: "Tugas Roamer atau EXP Laner menutup jalur masuk jungler lawan saat kontes Turtle atau Lord." },
+      { term: "Lord Dance", desc: "Memancing tim lawan keluar dari semak di area Lord sebelum memutuskan teamfight atau eksekusi Retribution." },
+      { term: "High Ground", desc: "Hero dengan jangkauan skill jauh (seperti Wu Zetian, Xavier, Pharsa) yang kuat mempertahankan base turret." },
+      { term: "Split Push", desc: "Strategi mendorong turret di lane seberang secara diam-diam saat tim lawan berkumpul di lane lain." }
+    ];
+
+    // =========================================================================
+    // 2. APPLICATION STATE
+    // =========================================================================
+    const state = {
+      currency: 'IDR',
+      mode: 'reguler',
+      gendongBilling: 'per_rank',
+      gendongWinCount: 1,
+      startTierIdx: 2, // Epic
+      startDivIdx: 3,  // Epic II
+      startStars: 3,
+      targetTierIdx: 5, // Mythic Honor
+      targetDivIdx: 0,
+      targetStars: 25,
+      heroRoleFilter: 'All',
+      heroSearchQuery: '',
+      selectedHeroes: ['Hayabusa'],
+      addons: {
+        priority: false,
+        liveStream: false
+      },
+      paymentMethod: 'QRIS',
+      shieldVisible: true,
+      toolsVisible: false
+    };
+
+    // =========================================================================
+    // 3. MLBB RANK EMBLEMS
+    // =========================================================================
+    function getRankEmblemSVG(tierKey) {
+      const emblems = {
+        master: 'master.png',
+        gm: 'gm.png',
+        epic: 'epic.png',
+        legend: 'legend.png',
+        mythic: 'mythic.png',
+        honor: 'mythic honor.png',
+        glory: 'mythic glory.png',
+        immortal: 'mythic imo.png'
+      };
+      const emblem = emblems[tierKey] || emblems.epic;
+      return `<img src="/ranks/${emblem}" width="34" height="34" alt="" aria-hidden="true" style="object-fit:contain">`;
+    }
+
+    // =========================================================================
+    // 4. REAL-TIME SEASON 42 (S42) COUNTDOWN ENGINE
+    // =========================================================================
+    // Season 42 Reset Target: 16 Desember 2026, 15:00:00 WIB (UTC+7)
+    const S42_END_TIMESTAMP = new Date('2026-12-16T15:00:00+07:00').getTime();
+
+    function updateSeason42Countdown() {
+      const now = Date.now();
+      const diff = Math.max(0, S42_END_TIMESTAMP - now);
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const mins = Math.floor((diff / (1000 * 60)) % 60);
+      const secs = Math.floor((diff / 1000) % 60);
+
+      const el = document.getElementById('s42CountdownText');
+      if (el) {
+        if (diff === 0) {
+          el.textContent = 'Reset Season S42 Sedang Berlangsung';
+        } else {
+          el.textContent = `${days} Hari : ${String(hours).padStart(2, '0')} Jam : ${String(mins).padStart(2, '0')}m : ${String(secs).padStart(2, '0')}d`;
+        }
+      }
+    }
+
+    // =========================================================================
+    // 5. CURRENCY & CUMULATIVE STAR LADDER MATH
+    // =========================================================================
+    function formatMoney(idrAmount) {
+      const cfg = CURRENCY_CONFIG[state.currency] || CURRENCY_CONFIG.IDR;
+      const converted = idrAmount * cfg.rate;
+      if (state.currency === 'IDR') {
+        return cfg.symbol + Math.round(converted).toLocaleString('id-ID');
+      }
+      return cfg.symbol + converted.toFixed(cfg.decimals);
+    }
+
+    function getTierRate(tierIdx) {
+      const tier = RANK_TIERS[tierIdx];
+      return state.mode === 'gendong' ? tier.genRate : tier.regRate;
+    }
+
+    function toGlobalStars(tierIdx, divIdx, stars) {
+      if (tierIdx === 0) return (divIdx * 4) + stars;
+      if (tierIdx === 1) return 16 + (divIdx * 5) + stars;
+      if (tierIdx === 2) return 41 + (divIdx * 5) + stars;
+      if (tierIdx === 3) return 66 + (divIdx * 5) + stars;
+      return 91 + stars;
+    }
+
+    function getRateForGlobalStar(globalStarIdx) {
+      if (globalStarIdx < 16) return getTierRate(0);
+      if (globalStarIdx < 41) return getTierRate(1);
+      if (globalStarIdx < 66) return getTierRate(2);
+      if (globalStarIdx < 91) return getTierRate(3);
+      if (globalStarIdx < 116) return getTierRate(4);
+      if (globalStarIdx < 141) return getTierRate(5);
+      if (globalStarIdx < 191) return getTierRate(6);
+      return getTierRate(7);
+    }
+
+    function formatRankLabel(tierIdx, divIdx, stars) {
+      const tier = RANK_TIERS[tierIdx];
+      if (tier.hasDiv) {
+        return `${tier.shortName} ${tier.divs[divIdx]} (${stars}★)`;
+      }
+      return `${tier.shortName} (${stars}★)`;
+    }
+
+    // =========================================================================
+    // 6. VALIDATION & KEYBOARD NUMERIC STAR INPUTS
+    // =========================================================================
+    function enforceTargetNotLowerThanStart() {
+      if (state.targetTierIdx < state.startTierIdx) {
+        state.targetTierIdx = state.startTierIdx;
+      }
+      const targetTier = RANK_TIERS[state.targetTierIdx];
+
+      if (targetTier.hasDiv) {
+        if (state.targetTierIdx === state.startTierIdx && state.targetDivIdx < state.startDivIdx) {
+          state.targetDivIdx = state.startDivIdx;
+        }
+        if (state.targetTierIdx === state.startTierIdx && state.targetDivIdx === state.startDivIdx) {
+          if (state.targetStars <= state.startStars) {
+            if (state.startStars < targetTier.maxDivStars) {
+              state.targetStars = state.startStars + 1;
+            } else if (state.targetDivIdx < targetTier.divs.length - 1) {
+              state.targetDivIdx += 1;
+              state.targetStars = 1;
+            } else {
+              state.targetTierIdx = Math.min(RANK_TIERS.length - 1, state.startTierIdx + 1);
+              const nextTier = RANK_TIERS[state.targetTierIdx];
+              state.targetDivIdx = 0;
+              state.targetStars = nextTier.hasDiv ? 1 : nextTier.minStar;
+            }
+          }
+        }
+      } else {
+        let minAllowed = targetTier.minStar;
+        if (state.targetTierIdx === state.startTierIdx) {
+          minAllowed = Math.max(targetTier.minStar, state.startStars + 1);
+        }
+        if (state.targetStars < minAllowed) {
+          state.targetStars = minAllowed;
+        }
+        if (state.targetStars > targetTier.maxStar) {
+          state.targetStars = targetTier.maxStar;
+        }
+      }
+    }
+
+    function selectStartTier(idx) {
+      state.startTierIdx = idx;
+      const tier = RANK_TIERS[idx];
+      if (tier.hasDiv) {
+        state.startDivIdx = Math.min(state.startDivIdx, tier.divs.length - 1);
+        state.startStars = Math.min(state.startStars, tier.maxDivStars);
+      } else {
+        state.startDivIdx = 0;
+        state.startStars = tier.minStar;
+      }
+      enforceTargetNotLowerThanStart();
+      renderAllCalculator();
+    }
+
+    function selectStartDivision(divIdx) {
+      state.startDivIdx = divIdx;
+      enforceTargetNotLowerThanStart();
+      renderAllCalculator();
+    }
+
+    function adjustStartStars(delta) {
+      const tier = RANK_TIERS[state.startTierIdx];
+      const maxS = tier.hasDiv ? tier.maxDivStars : tier.maxStar;
+      const minS = tier.hasDiv ? 0 : tier.minStar;
+      state.startStars = Math.max(minS, Math.min(maxS, state.startStars + delta));
+      enforceTargetNotLowerThanStart();
+      renderAllCalculator();
+    }
+
+    function handleStartStarInput(rawVal) {
+      const tier = RANK_TIERS[state.startTierIdx];
+      const maxS = tier.hasDiv ? tier.maxDivStars : tier.maxStar;
+      const minS = tier.hasDiv ? 0 : tier.minStar;
+      let parsed = parseInt(rawVal, 10);
+      if (isNaN(parsed)) parsed = minS;
+      if (parsed < minS) {
+        parsed = minS;
+        showToast(`Minimal bintang ${tier.name} adalah ${minS}★`);
+      } else if (parsed > maxS) {
+        parsed = maxS;
+        showToast(`Maksimal bintang ${tier.name} adalah ${maxS}★`);
+      }
+      state.startStars = parsed;
+      enforceTargetNotLowerThanStart();
+      renderAllCalculator();
+    }
+
+    function selectTargetTier(idx) {
+      if (idx < state.startTierIdx) {
+        showToast('Rank tujuan tidak boleh di bawah rank awal!');
+        return;
+      }
+      state.targetTierIdx = idx;
+      const tier = RANK_TIERS[idx];
+      if (tier.hasDiv) {
+        state.targetDivIdx = (idx === state.startTierIdx) ? state.startDivIdx : 0;
+        state.targetStars = (idx === state.startTierIdx && state.targetDivIdx === state.startDivIdx)
+          ? Math.min(tier.maxDivStars, state.startStars + 1)
+          : 1;
+      } else {
+        state.targetDivIdx = 0;
+        state.targetStars = (idx === state.startTierIdx)
+          ? Math.max(tier.minStar, state.startStars + 1)
+          : tier.minStar;
+      }
+      enforceTargetNotLowerThanStart();
+      renderAllCalculator();
+    }
+
+    function selectTargetDivision(divIdx) {
+      if (state.targetTierIdx === state.startTierIdx && divIdx < state.startDivIdx) {
+        showToast('Divisi tujuan tidak boleh lebih rendah!');
+        return;
+      }
+      state.targetDivIdx = divIdx;
+      enforceTargetNotLowerThanStart();
+      renderAllCalculator();
+    }
+
+    function adjustTargetStars(delta) {
+      const tier = RANK_TIERS[state.targetTierIdx];
+      const maxS = tier.hasDiv ? tier.maxDivStars : tier.maxStar;
+      let minS = tier.hasDiv ? 0 : tier.minStar;
+      if (state.targetTierIdx === state.startTierIdx && (!tier.hasDiv || state.targetDivIdx === state.startDivIdx)) {
+        minS = state.startStars + 1;
+      }
+      state.targetStars = Math.max(minS, Math.min(maxS, state.targetStars + delta));
+      enforceTargetNotLowerThanStart();
+      renderAllCalculator();
+    }
+
+    function handleTargetStarInput(rawVal) {
+      const tier = RANK_TIERS[state.targetTierIdx];
+      const maxS = tier.hasDiv ? tier.maxDivStars : tier.maxStar;
+      let minS = tier.hasDiv ? 0 : tier.minStar;
+      if (state.targetTierIdx === state.startTierIdx && (!tier.hasDiv || state.targetDivIdx === state.startDivIdx)) {
+        minS = state.startStars + 1;
+      }
+      let parsed = parseInt(rawVal, 10);
+      if (isNaN(parsed)) parsed = minS;
+      if (parsed < minS) {
+        parsed = minS;
+        showToast(`Minimal target bintang di sini adalah ${minS}★`);
+      } else if (parsed > maxS) {
+        parsed = maxS;
+        showToast(`Maksimal bintang ${tier.name} adalah ${maxS}★`);
+      }
+      state.targetStars = parsed;
+      enforceTargetNotLowerThanStart();
+      renderAllCalculator();
+    }
+
+    // =========================================================================
+    // 7. SERVICE MODE, GENDONG PACKAGES & HERO PICKER (A-Z HORIZONTAL SCROLL)
+    // =========================================================================
+    function setServiceMode(mode) {
+      state.mode = mode;
+      const isGendong = mode === 'gendong';
+      document.getElementById('btnModeReguler').classList.toggle('active', !isGendong);
+      document.getElementById('btnModeGendong').classList.toggle('active', isGendong);
+
+      document.getElementById('txtModeDesc').textContent = isGendong
+        ? 'Mabar bareng booster di party (100% Tanpa Login / Tanpa Password).'
+        : 'Akun dimainkan langsung oleh Ex-Pro Booster (Privasi & Cepat).';
+      document.getElementById('txtModeBadge').textContent = isGendong ? 'PARTY CARRY' : 'FAST LANE';
+      document.getElementById('txtModeBadge').style.color = isGendong ? '#fbbf24' : '#22d3ee';
+
+      document.getElementById('gendongSubModeCard').style.display = isGendong ? 'flex' : 'none';
+      document.getElementById('addonHeroBox').style.display = isGendong ? 'none' : 'flex';
+      document.getElementById('addonStreamBox').style.display = isGendong ? 'none' : 'flex';
+
+      if (!isGendong) {
+        state.gendongBilling = 'per_rank';
+      }
+      updateGendongSubModeUI();
+      renderAllCalculator();
+    }
+
+    function setGendongBillingType(type) {
+      state.gendongBilling = type;
+      updateGendongSubModeUI();
+      recalculateAll();
+    }
+
+    function setGendongWinCount(count) {
+      state.gendongWinCount = count;
+      [1, 3, 5].forEach(c => {
+        document.getElementById('winPack' + c).classList.toggle('active', c === count);
+      });
+      recalculateAll();
+    }
+
+    function updateGendongSubModeUI() {
+      const isPerWin = state.mode === 'gendong' && state.gendongBilling === 'per_win';
+      document.getElementById('btnGendongPerRank').classList.toggle('active', !isPerWin);
+      document.getElementById('btnGendongPerWin').classList.toggle('active', isPerWin);
+      document.getElementById('gendongWinPackageBox').style.display = isPerWin ? 'block' : 'none';
+      document.getElementById('step2TargetCard').style.display = isPerWin ? 'none' : 'flex';
+    }
+
+    function setHeroRoleFilter(role) {
+      state.heroRoleFilter = role;
+      document.querySelectorAll('.role-chip').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-role') === role);
+      });
+      renderHeroHorizontalList();
+    }
+
+    function handleHeroSearch(val) {
+      state.heroSearchQuery = val;
+      document.getElementById('btnClearHeroSearch').classList.toggle('visible', val.trim().length > 0);
+      renderHeroHorizontalList();
+    }
+
+    function clearHeroSearch() {
+      state.heroSearchQuery = '';
+      document.getElementById('inpHeroSearch').value = '';
+      document.getElementById('btnClearHeroSearch').classList.remove('visible');
+      renderHeroHorizontalList();
+    }
+
+    function toggleHeroSelection(heroName) {
+      const idx = state.selectedHeroes.indexOf(heroName);
+      if (idx >= 0) {
+        state.selectedHeroes.splice(idx, 1);
+      } else {
+        if (state.selectedHeroes.length >= 3) {
+          showToast('Maksimal 3 hero favorit yang bisa dipilih!');
+          return;
+        }
+        state.selectedHeroes.push(heroName);
+      }
+      renderHeroHorizontalList();
+      recalculateAll();
+    }
+
+    function toggleAddon(key) {
+      state.addons[key] = !state.addons[key];
+      if (key === 'priority') {
+        document.getElementById('togglePriority').classList.toggle('on', state.addons.priority);
+        document.getElementById('txtPrioritySub').textContent = state.addons.priority
+          ? 'Express Priority ⚡ Aktif • Dikerjakan 2x lebih cepat'
+          : 'Antrean Normal • Aktifkan untuk 2x lebih cepat';
+      }
+      if (key === 'liveStream') {
+        document.getElementById('toggleLiveStream').classList.toggle('on', state.addons.liveStream);
+      }
+      recalculateAll();
+    }
+
+    function selectPaymentMethod(pay) {
+      state.paymentMethod = pay;
+      document.querySelectorAll('#paymentMethodStrip .pay-badge').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-pay') === pay);
+      });
+    }
+
+    function toggleShieldSection() {
+      state.shieldVisible = !state.shieldVisible;
+      document.getElementById('shieldBodyContent').classList.toggle('collapsed', !state.shieldVisible);
+      document.getElementById('txtShieldToggleLabel').textContent = state.shieldVisible ? 'Sembunyikan' : 'Tampilkan';
+      document.getElementById('iconShieldChevron').style.transform = state.shieldVisible ? 'rotate(0deg)' : 'rotate(180deg)';
+    }
+
+    function toggleToolsPanel(scrollIntoViewFlag) {
+      state.toolsVisible = !state.toolsVisible;
+      const panel = document.getElementById('toolsDrawerSection');
+      panel.classList.toggle('open', state.toolsVisible);
+
+      document.getElementById('btnHeaderToolsToggle').classList.toggle('active', state.toolsVisible);
+      document.getElementById('txtHeaderToolsLabel').textContent = state.toolsVisible ? 'Tutup Tools' : 'Tools Gratis';
+
+      document.getElementById('txtBottomToolsLabel').textContent = state.toolsVisible ? 'Sembunyikan Tools Gratis' : 'Tampilkan Tools Gratis';
+      document.getElementById('iconBottomToolsChevron').style.transform = state.toolsVisible ? 'rotate(180deg)' : 'rotate(0deg)';
+
+      if (state.toolsVisible) {
+        calculateWinrateTool();
+        calculateSeasonReset();
+        renderGlossaryList();
+        if (scrollIntoViewFlag) {
+          panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    }
+
+    // =========================================================================
+    // 8. RENDER CALCULATOR GRIDS & HORIZONTAL A-Z HERO LIST
+    // =========================================================================
+    function renderAllCalculator() {
+      const startTier = RANK_TIERS[state.startTierIdx];
+      const targetTier = RANK_TIERS[state.targetTierIdx];
+
+      // Start Rank Grid
+      document.getElementById('startRankGrid').innerHTML = RANK_TIERS.map((tier, idx) => `
+        <button type="button" class="rank-card-btn ${idx === state.startTierIdx ? 'active' : ''}" onclick="selectStartTier(${idx})">
+          <div class="rank-emblem-wrap">${getRankEmblemSVG(tier.key)}</div>
+          <div class="rank-name">${tier.shortName}</div>
+          <div class="rank-rate">${formatMoney(getTierRate(idx))}/★</div>
+        </button>
+      `).join('');
+
+      // Start Division Pills
+      const startDivBox = document.getElementById('startDivisionBox');
+      if (startTier.hasDiv) {
+        startDivBox.style.display = 'flex';
+        document.getElementById('lblStartDivHint').textContent = `${startTier.name} ${startTier.divs[0]} – ${startTier.divs[startTier.divs.length - 1]}`;
+        const pillsEl = document.getElementById('startDivisionPills');
+        pillsEl.className = 'division-pills' + (startTier.divs.length === 4 ? ' cols-4' : '');
+        pillsEl.innerHTML = startTier.divs.map((divName, dIdx) => `
+          <button type="button" class="div-pill ${dIdx === state.startDivIdx ? 'active' : ''}" onclick="selectStartDivision(${dIdx})">${divName}</button>
+        `).join('');
+      } else {
+        startDivBox.style.display = 'none';
+      }
+
+      const startMaxS = startTier.hasDiv ? startTier.maxDivStars : startTier.maxStar;
+      const startMinS = startTier.hasDiv ? 0 : startTier.minStar;
+      const inpStart = document.getElementById('inpStartStars');
+      inpStart.min = startMinS;
+      inpStart.max = startMaxS;
+      inpStart.value = state.startStars;
+
+      document.getElementById('lblStartRankStatus').textContent = formatRankLabel(state.startTierIdx, state.startDivIdx, state.startStars);
+      document.getElementById('lblStartStarRange').textContent = startTier.hasDiv
+        ? `Ketik angka atau tekan − / + (${startMinS}★ – ${startMaxS}★)`
+        : `Rentang ${startTier.name}: ${startMinS}★ – ${startMaxS}★ (bisa ketik manual)`;
+
+      // Target Rank Grid (Strict Upward-Only)
+      document.getElementById('targetRankGrid').innerHTML = RANK_TIERS.map((tier, idx) => {
+        const isLocked = idx < state.startTierIdx;
+        const isSelected = idx === state.targetTierIdx;
+        return `
+          <button type="button" class="rank-card-btn ${isSelected ? 'target-active' : ''} ${isLocked ? 'locked' : ''}" onclick="selectTargetTier(${idx})">
+            ${isLocked ? '<span class="lock-tag">LOCK</span>' : ''}
+            <div class="rank-emblem-wrap">${getRankEmblemSVG(tier.key)}</div>
+            <div class="rank-name">${tier.shortName}</div>
+            <div class="rank-rate">${formatMoney(getTierRate(idx))}/★</div>
+          </button>
+        `;
+      }).join('');
+
+      // Target Division Pills
+      const targetDivBox = document.getElementById('targetDivisionBox');
+      if (targetTier.hasDiv) {
+        targetDivBox.style.display = 'flex';
+        document.getElementById('lblTargetDivHint').textContent = `Pilih divisi ${targetTier.name}`;
+        const pillsEl = document.getElementById('targetDivisionPills');
+        pillsEl.className = 'division-pills' + (targetTier.divs.length === 4 ? ' cols-4' : '');
+        pillsEl.innerHTML = targetTier.divs.map((divName, dIdx) => {
+          const divLocked = (state.targetTierIdx === state.startTierIdx && dIdx < state.startDivIdx);
+          return `<button type="button" class="div-pill ${dIdx === state.targetDivIdx ? 'target-active' : ''} ${divLocked ? 'locked' : ''}" onclick="selectTargetDivision(${dIdx})">${divName}</button>`;
+        }).join('');
+      } else {
+        targetDivBox.style.display = 'none';
+      }
+
+      const targetMaxS = targetTier.hasDiv ? targetTier.maxDivStars : targetTier.maxStar;
+      let targetMinS = targetTier.hasDiv ? 0 : targetTier.minStar;
+      if (state.targetTierIdx === state.startTierIdx && (!targetTier.hasDiv || state.targetDivIdx === state.startDivIdx)) {
+        targetMinS = state.startStars + 1;
+      }
+      const inpTarget = document.getElementById('inpTargetStars');
+      inpTarget.min = targetMinS;
+      inpTarget.max = targetMaxS;
+      inpTarget.value = state.targetStars;
+
+      document.getElementById('lblTargetRankStatus').textContent = formatRankLabel(state.targetTierIdx, state.targetDivIdx, state.targetStars);
+      document.getElementById('lblTargetStarRange').textContent = targetTier.hasDiv
+        ? `Ketik angka atau tekan − / + (${targetMinS}★ – ${targetMaxS}★)`
+        : `${targetTier.name} (${targetMinS}★ – ${targetMaxS}★ • bisa ketik manual)`;
+
+      renderHeroHorizontalList();
+      recalculateAll();
+    }
+
+    function renderHeroHorizontalList() {
+      const bar = document.getElementById('selectedHeroesBar');
+      if (state.selectedHeroes.length === 0) {
+        bar.innerHTML = `<span style="font-size:11px;color:#94a3b8;font-weight:600;">Belum ada hero dipilih (Booster bebas pilih meta terkuat)</span>`;
+      } else {
+        bar.innerHTML = state.selectedHeroes.map(h => `
+          <button type="button" class="selected-hero-tag" onclick="toggleHeroSelection('${h.replace(/'/g, "\\'")}')">
+            <span>${h}</span>
+            <span>✕</span>
+          </button>
+        `).join('');
+      }
+
+      const q = state.heroSearchQuery.trim().toLowerCase();
+      const filtered = MLBB_HEROES_RAW.filter(h => {
+        const matchRole = state.heroRoleFilter === 'All' || h.roles.includes(state.heroRoleFilter);
+        const matchText = !q || h.name.toLowerCase().includes(q) || h.roles.join(' ').toLowerCase().includes(q);
+        return matchRole && matchText;
+      });
+
+      document.getElementById('txtHeroCountInfo').textContent = `Menampilkan ${filtered.length} Hero (Urut A–Z)`;
+
+      const listEl = document.getElementById('heroHorizontalList');
+      if (filtered.length === 0) {
+        listEl.innerHTML = `<div style="padding:12px;font-size:12px;color:#94a3b8;font-weight:700;">Hero tidak ditemukan. Coba kata kunci lain.</div>`;
+        return;
+      }
+
+      listEl.innerHTML = filtered.map(h => {
+        const isSel = state.selectedHeroes.includes(h.name);
+        const safeName = h.name.replace(/'/g, "\\'");
+        return `
+          <button type="button" class="hero-chip-card ${isSel ? 'selected' : ''}" onclick="toggleHeroSelection('${safeName}')">
+            <span class="hero-chip-name">${h.name}</span>
+            <span class="hero-chip-role">${h.roles.join(' / ')}</span>
+          </button>
+        `;
+      }).join('');
+    }
+
+    // =========================================================================
+    // 9. REAL-TIME PRICE & VOLUME DISCOUNT ENGINE
+    // =========================================================================
+    function recalculateAll() {
+      const startTier = RANK_TIERS[state.startTierIdx];
+      const targetTier = RANK_TIERS[state.targetTierIdx];
+      const startLabel = formatRankLabel(state.startTierIdx, state.startDivIdx, state.startStars);
+      const isPerWin = state.mode === 'gendong' && state.gendongBilling === 'per_win';
+
+      let netUnits = 1;
+      let baseSubtotalIDR = 0;
+      let targetLabel = '';
+
+      if (isPerWin) {
+        netUnits = state.gendongWinCount;
+        const unitRate = getTierRate(state.startTierIdx);
+        baseSubtotalIDR = netUnits * unitRate;
+        targetLabel = `Paket ${netUnits} Win Mabar`;
+      } else {
+        const startGlobal = toGlobalStars(state.startTierIdx, state.startDivIdx, state.startStars);
+        const targetGlobal = toGlobalStars(state.targetTierIdx, state.targetDivIdx, state.targetStars);
+        netUnits = Math.max(1, targetGlobal - startGlobal);
+        for (let s = startGlobal; s < startGlobal + netUnits; s++) {
+          baseSubtotalIDR += getRateForGlobalStar(s);
+        }
+        targetLabel = formatRankLabel(state.targetTierIdx, state.targetDivIdx, state.targetStars);
+      }
+
+      let addonMultiplier = 0;
+      if (state.addons.priority) addonMultiplier += 0.30;
+      if (state.mode === 'reguler' && state.addons.liveStream) addonMultiplier += 0.20;
+
+      const grossIDR = baseSubtotalIDR * (1 + addonMultiplier);
+
+      let volumeDiscountPct = 0;
+      let nextHint = 'Order ≥ Rp 100k dapat diskon 5%';
+      let progressWidth = Math.min(100, Math.round((grossIDR / 100000) * 25));
+
+      if (grossIDR >= 1000000) {
+        volumeDiscountPct = 0.20;
+        nextHint = 'Diskon Maksimal 20% Tercapai!';
+        progressWidth = 100;
+      } else if (grossIDR >= 600000) {
+        volumeDiscountPct = 0.15;
+        nextHint = 'Order ≥ Rp 1 Jt dapat diskon 20%';
+        progressWidth = 80;
+      } else if (grossIDR >= 300000) {
+        volumeDiscountPct = 0.10;
+        nextHint = 'Order ≥ Rp 600k dapat diskon 15%';
+        progressWidth = 58;
+      } else if (grossIDR >= 100000) {
+        volumeDiscountPct = 0.05;
+        nextHint = 'Order ≥ Rp 300k dapat diskon 10%';
+        progressWidth = 36;
+      }
+
+      const pack5WinDiscount = (isPerWin && state.gendongWinCount === 5) ? 0.05 : 0;
+      const totalDiscountPct = Math.min(0.25, volumeDiscountPct + pack5WinDiscount);
+
+      const savedIDR = Math.round(grossIDR * totalDiscountPct);
+      const grandTotalIDR = Math.max(1000, Math.round(grossIDR - savedIDR));
+      const avgRateIDR = Math.round(baseSubtotalIDR / netUnits);
+
+      document.getElementById('svgRouteStart').innerHTML = getRankEmblemSVG(startTier.key);
+      document.getElementById('svgRouteTarget').innerHTML = getRankEmblemSVG(isPerWin ? startTier.key : targetTier.key);
+      document.getElementById('txtRouteStartLabel').textContent = startLabel;
+      document.getElementById('txtRouteTargetLabel').textContent = targetLabel;
+
+      const totalDiscPercentInt = Math.round(totalDiscountPct * 100);
+      document.getElementById('txtDiscountTitle').textContent = totalDiscPercentInt > 0
+        ? `Diskon Otomatis: ${totalDiscPercentInt}% AKTIF`
+        : 'Diskon Volume: 0% (Order ≥ Rp 100k hemat 5%)';
+      document.getElementById('txtDiscountNextHint').textContent = nextHint;
+      document.getElementById('discountProgressFill').style.width = `${Math.max(10, progressWidth)}%`;
+      document.getElementById('txtReceiptDiscountBadge').textContent = totalDiscPercentInt > 0 ? `Hemat ${totalDiscPercentInt}%` : 'Harga Resmi';
+
+      document.getElementById('txtReceiptMode').textContent = state.mode === 'reguler' ? 'Joki Reguler' : 'Gendong (Mabar)';
+      document.getElementById('txtReceiptNetStars').textContent = isPerWin ? `${netUnits} Win Garansi` : `${netUnits} Bintang`;
+      document.getElementById('txtReceiptAvgRate').textContent = `${formatMoney(avgRateIDR)} / ${isPerWin ? 'Win' : '★'}`;
+
+      const addonList = [];
+      if (state.mode === 'reguler' && state.selectedHeroes.length > 0) {
+        addonList.push(`Hero: ${state.selectedHeroes.join(', ')}`);
+      }
+      if (state.addons.priority) addonList.push('Fast Track (+30%)');
+      if (state.mode === 'reguler' && state.addons.liveStream) addonList.push('Live Stream (+20%)');
+      const addonSummary = addonList.length > 0 ? addonList.join(' • ') : 'Standar';
+      document.getElementById('txtReceiptAddons').textContent = addonSummary;
+
+      const baseHours = isPerWin ? netUnits * 0.7 : Math.max(2, Math.round(netUnits * 0.65));
+      const finalHours = state.addons.priority ? Math.max(1, Math.round(baseHours * 0.5)) : baseHours;
+      document.getElementById('txtReceiptEta').textContent = finalHours <= 24
+        ? `± ${finalHours} Jam`
+        : `± ${Math.ceil(finalHours / 24)} Hari (${finalHours} Jam)`;
+
+      document.getElementById('rowDiscountSaved').style.display = savedIDR > 0 ? 'flex' : 'none';
+      document.getElementById('txtReceiptSaved').textContent = `- ${formatMoney(savedIDR)}`;
+
+      const formattedGrand = formatMoney(grandTotalIDR);
+      document.getElementById('txtDesktopTotal').textContent = formattedGrand;
+      document.getElementById('txtDockTotal').textContent = formattedGrand;
+      document.getElementById('txtDockSubtitle').textContent = `${startLabel} → ${targetLabel}`;
+
+      return {
+        startLabel,
+        targetLabel,
+        netUnits,
+        isPerWin,
+        grandTotalFormatted: formattedGrand,
+        addonSummary,
+        discountPct: totalDiscPercentInt
+      };
+    }
+
+    // =========================================================================
+    // 10. PRICELIST TABLE, FAQ & TOOLS GRATIS
+    // =========================================================================
+    function renderPricelistTable() {
+      document.getElementById('pricelistTableBody').innerHTML = RANK_TIERS.map(tier => `
+        <tr>
+          <td>
+            <div style="display:flex;align-items:center;gap:9px;">
+              <div style="width:28px;height:28px;flex-shrink:0;">${getRankEmblemSVG(tier.key)}</div>
+              <div>
+                <div style="font-weight:900;color:#ffffff;font-size:13px;">${tier.name}</div>
+                <div style="font-size:10.5px;color:#94a3b8;font-weight:600;">${tier.rangeLabel}</div>
+              </div>
+            </div>
+          </td>
+          <td style="text-align:right;font-weight:900;color:#fbbf24;">${formatMoney(tier.regRate)}</td>
+          <td style="text-align:right;font-weight:900;color:#22d3ee;">${formatMoney(tier.genRate)}</td>
+        </tr>
+      `).join('');
+    }
+
+    function renderFaqAccordion() {
+      document.getElementById('faqAccordionList').innerHTML = FAQ_DATA.map((item, idx) => `
+        <div class="faq-item ${idx === 0 ? 'open' : ''}" id="faqItem${idx}">
+          <button type="button" class="faq-question" onclick="toggleFaqItem(${idx})">
+            <span>${item.q}</span>
+            <span style="color:#fbbf24;font-weight:900;">▾</span>
+          </button>
+          <div class="faq-answer">${item.a}</div>
+        </div>
+      `).join('');
+    }
+
+    function toggleFaqItem(idx) {
+      document.getElementById('faqItem' + idx).classList.toggle('open');
+    }
+
+    function calculateWinrateTool() {
+      const total = parseFloat(document.getElementById('wrTotalMatch').value) || 0;
+      const curWr = parseFloat(document.getElementById('wrCurrentPct').value) || 0;
+      const targetWr = parseFloat(document.getElementById('wrTargetPct').value) || 0;
+      const box = document.getElementById('wrToolResultBox');
+
+      if (total <= 0 || targetWr <= curWr || targetWr >= 100) {
+        box.innerHTML = `<span style="color:#94a3b8;">Masukkan Target WR lebih besar dari WR saat ini (maks. 99.9%).</span>`;
+        return;
+      }
+
+      const currentWins = total * (curWr / 100);
+      const neededWins = Math.ceil(((targetWr / 100) * total - currentWins) / (1 - (targetWr / 100)));
+      box.innerHTML = `Kamu butuh <strong style="color:#fbbf24;font-size:15px;">${neededWins} Win Tanpa Kalah</strong> berturut-turut untuk mencapai WR <strong style="color:#22d3ee;">${targetWr}%</strong>.`;
+    }
+
+    function calculateSeasonReset() {
+      const val = document.getElementById('selSeasonResetRank').value;
+      const map = {
+        epic: 'Setelah Reset Season S42 → S43, akun kamu akan ditempatkan di Grandmaster II atau Grandmaster I.',
+        legend: 'Setelah Reset Season S42 → S43, akun kamu akan ditempatkan di Epic IV atau Epic III.',
+        mythic: 'Setelah Reset Season S42 → S43, akun kamu akan ditempatkan di Epic II.',
+        honor: 'Setelah Reset Season S42 → S43, akun kamu akan ditempatkan di Epic I (tier tertinggi awal musim).',
+        glory: 'Setelah Reset Season S42 → S43, akun kamu akan ditempatkan di Legend V.',
+        immortal: 'Setelah Reset Season S42 → S43, akun kamu akan ditempatkan di Legend V dengan tambahan Star Protection Card.'
+      };
+      document.getElementById('seasonResetResultBox').textContent = map[val] || '';
+    }
+
+    function renderGlossaryList(query = '') {
+      const q = query.trim().toLowerCase();
+      const filtered = GLOSSARY_TERMS.filter(g => !q || g.term.toLowerCase().includes(q) || g.desc.toLowerCase().includes(q));
+      document.getElementById('glossaryListContainer').innerHTML = filtered.map(g => `
+        <div class="shield-item">
+          <div style="font-size:12.5px;font-weight:900;color:#22d3ee;margin-bottom:2px;">${g.term}</div>
+          <div style="font-size:11.5px;color:#cbd5e1;">${g.desc}</div>
+        </div>
+      `).join('');
+    }
+
+    // =========================================================================
+    // 11. MODALS, CURRENCY & WHATSAPP CHECKOUT
+    // =========================================================================
+    function scrollToSection(id) {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function setCurrency(curr) {
+      state.currency = curr;
+      document.querySelectorAll('[data-currency-code]').forEach(el => { el.textContent = curr; });
+      renderAllCalculator();
+      renderPricelistTable();
+      showToast(`Mata uang diubah ke ${curr}`);
+    }
+
+    function cycleCurrency() {
+      const list = ['IDR', 'MYR', 'SGD'];
+      const next = list[(list.indexOf(state.currency) + 1) % list.length];
+      setCurrency(next);
+    }
+
+    function buildWhatsAppMessage() {
+      const calc = recalculateAll();
+      const mlbbId = document.getElementById('inpGendongMlbbId').value.trim();
+      let msg = `Halo Admin BENGKELML, saya mau order Joki MLBB Season 42 (S42):\n\n`;
+      msg += `• Layanan: ${state.mode === 'reguler' ? 'Joki Reguler' : 'Joki Gendong (Mabar)'}\n`;
+      msg += `• Rank Awal: ${calc.startLabel}\n`;
+      msg += `• Target: ${calc.targetLabel}\n`;
+      msg += `• Total Order: ${calc.isPerWin ? calc.netUnits + ' Win' : calc.netUnits + ' Bintang'}\n`;
+      msg += `• Add-Ons: ${calc.addonSummary}\n`;
+      if (state.mode === 'gendong' && mlbbId) {
+        msg += `• ID & Server MLBB: ${mlbbId}\n`;
+      }
+      msg += `• Pembayaran: ${state.paymentMethod}\n`;
+      if (calc.discountPct > 0) {
+        msg += `• Diskon Aktif: ${calc.discountPct}%\n`;
+      }
+      msg += `• Total Estimasi: ${calc.grandTotalFormatted}\n\n`;
+      msg += `Mohon info slot booster yang ready sekarang. Terima kasih!`;
+      return msg;
+    }
+
+    function openCheckoutModal() {
+      const calc = recalculateAll();
+      document.getElementById('modalSummaryContent').innerHTML = `
+        <div class="receipt-row"><span class="receipt-label">Season</span><span class="receipt-val" style="color:#fbbf24;">Season 42 (S42)</span></div>
+        <div class="receipt-row"><span class="receipt-label">Layanan</span><span class="receipt-val">${state.mode === 'reguler' ? 'Joki Reguler' : 'Gendong (Mabar)'}</span></div>
+        <div class="receipt-row"><span class="receipt-label">Rute Rank</span><span class="receipt-val" style="color:#22d3ee;">${calc.startLabel} → ${calc.targetLabel}</span></div>
+        <div class="receipt-row"><span class="receipt-label">Total</span><span class="receipt-val">${calc.isPerWin ? calc.netUnits + ' Win' : calc.netUnits + ' Bintang'}</span></div>
+        <div class="receipt-row"><span class="receipt-label">Add-Ons</span><span class="receipt-val">${calc.addonSummary}</span></div>
+        <div class="receipt-row"><span class="receipt-label">Pembayaran</span><span class="receipt-val">${state.paymentMethod}</span></div>
+        <div class="receipt-row" style="border-top:1.5px solid #2c2754;padding-top:8px;"><span class="receipt-label">Total Bayar</span><span class="receipt-val" style="color:#fbbf24;font-size:17px;">${calc.grandTotalFormatted}</span></div>
+      `;
+      document.getElementById('checkoutModal').classList.add('open');
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById('checkoutModal').classList.remove('open');
+    }
+
+    function confirmAndOpenWhatsApp() {
+      const text = encodeURIComponent(buildWhatsAppMessage());
+      closeCheckoutModal();
+      window.open(`https://wa.me/62895391187744?text=${text}`, '_blank');
+    }
+
+    function copyOrderFormat() {
+      const text = buildWhatsAppMessage();
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        showToast('Format pesanan disalin ke clipboard!');
+      } catch (e) {
+        showToast('Gagal menyalin teks');
+      }
+      document.body.removeChild(ta);
+    }
+
+    function openProofModal(idx) {
+      const item = PROOF_ITEMS[idx];
+      if (!item) return;
+      document.getElementById('proofModalTitle').textContent = item.title;
+      document.getElementById('proofModalBody').innerHTML = `
+        <div class="shield-item">
+          <div style="font-size:12px;color:#94a3b8;">Customer: <strong style="color:#ffffff;">${item.customer}</strong></div>
+          <div style="font-size:12px;color:#94a3b8;">Rute: <strong style="color:#22d3ee;">${item.route}</strong></div>
+          <div style="font-size:12px;color:#94a3b8;">Paket: <strong style="color:#fbbf24;">${item.mode}</strong></div>
+        </div>
+        <div class="shield-item">
+          <div style="font-size:11.5px;font-weight:900;color:#34d399;margin-bottom:3px;">Statistik Match Terverifikasi:</div>
+          <div style="font-size:12px;color:#ffffff;">${item.stats}</div>
+          <div style="font-size:11px;color:#fbbf24;margin-top:3px;">${item.duration}</div>
+        </div>
+        <p style="font-size:12px;color:#cbd5e1;font-style:italic;">"${item.quote}"</p>
+      `;
+      document.getElementById('proofModal').classList.add('open');
+    }
+
+    function closeProofModal() {
+      document.getElementById('proofModal').classList.remove('open');
+    }
+
+    function openLegalModal(type) {
+      if (type === 'terms') {
+        document.getElementById('readerModalTitle').textContent = 'Syarat & Ketentuan BENGKELML';
+        document.getElementById('readerModalBody').innerHTML = `
+          <p>1. Pelanggan dilarang membuka atau login ke akun Mobile Legends selama sesi Joki Reguler sedang berlangsung tanpa konfirmasi admin.</p>
+          <p>2. Pembayaran dilakukan penuh di awal sebelum booster memulai pertandingan.</p>
+          <p>3. Garansi ganti win berlaku penuh apabila terjadi kekalahan pada layanan Joki Gendong.</p>
+        `;
+      } else {
+        document.getElementById('readerModalTitle').textContent = 'Kebijakan Privasi & Keamanan';
+        document.getElementById('readerModalBody').innerHTML = `
+          <p>1. Informasi akun yang dikirimkan melalui WhatsApp hanya digunakan untuk keperluan login sesi boosting dan tidak disimpan secara permanen.</p>
+          <p>2. Pelanggan diwajibkan mengganti password segera setelah pesanan dinyatakan selesai.</p>
+        `;
+      }
+      document.getElementById('readerModal').classList.add('open');
+    }
+
+    function closeReaderModal() {
+      document.getElementById('readerModal').classList.remove('open');
+    }
+
+    function toggleDrawer(open) {
+      document.getElementById('drawerBackdrop').classList.toggle('open', open);
+      document.getElementById('drawerPanel').classList.toggle('open', open);
+      document.getElementById('brandMenuTrigger').setAttribute('aria-expanded', String(open));
+    }
+
+    let toastTimer = null;
+    function showToast(msg) {
+      const el = document.getElementById('toastBanner');
+      el.textContent = msg;
+      el.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => el.classList.remove('show'), 2600);
+    }
+
+    // =========================================================================
+    // 12. INITIALIZE APPLICATION
+    // =========================================================================
+    updateSeason42Countdown();
+    setInterval(updateSeason42Countdown, 1000);
+    renderAllCalculator();
+    renderPricelistTable();
+    renderFaqAccordion();
+    calculateWinrateTool();
+    calculateSeasonReset();
+    renderGlossaryList();
+  </script>
+</body>
 </html>
